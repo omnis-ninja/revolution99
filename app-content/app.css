@@ -1,0 +1,27 @@
+﻿body{
+	background-color:#eee;
+	top:24%;
+}
+.login-container{
+	font-weight: 100;
+	position: absolute;
+	width: 440px;
+	margin-left: -190px;
+	left: 50%;
+	margin-top:24%;
+}
+.input-controls {
+	height: 55px;
+	padding: 0 14px;
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	font-size: 1.6em;
+	border: none;
+	margin: 10px 0;
+	line-height: 1.6em;
+	word-wrap: normal;
+	word-break: normal;
+	white-space: nowrap;
+	width:100%;
+}

@@ -1,0 +1,22 @@
+.env
+
+# IDE
+.idea
+.tmp
+.project
+.vscode
+
+
+# NPM
+node_modules
+npm-debug.log
+
+
+
+# Logs
+/logs
+
+
+# Bower
+app/bower_components
+
