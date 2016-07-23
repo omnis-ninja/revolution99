@@ -17,6 +17,9 @@
             AuthenticationService.ClearCredentials();
         })();
 
+		/*
+		 * Login the user
+		 */
         function login() {
             vm.dataLoading = true;
             AuthenticationService.Login(vm.username, vm.password, function (response) {
@@ -24,20 +27,23 @@
                     AuthenticationService.SetCredentials(vm.username, vm.password);
                     $location.path('/');
                 } else {
-                	$location.path('/register');
+                    $location.path('/register');
                     FlashService.Error(response.message);
                     vm.dataLoading = false;
                 }
             });
         };
-        
+
+		/*
+		 * Forgot password functionality
+		 */
         function forgotPassword() {
-        	vm.dataLoading = true;
+            vm.dataLoading = true;
             AuthenticationService.ForgotPassword(vm.badgeNumber, vm.email, function (response) {
                 if (response.success) {
                     $location.path('/forgotPasswordSuccess');
                 } else {
-                	$location.path('/forgotPasswordSuccess');
+                    $location.path('/forgotPasswordSuccess');
                     FlashService.Error(response.message);
                     vm.dataLoading = false;
                 }
