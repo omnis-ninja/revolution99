@@ -1,6 +1,14 @@
 ﻿body{
-	background-color:#eee;
-	top:24%;
+	background-color:#e9f1f4;
+}
+body .jumbotron{
+	background-color:#e9f1f4;
+}
+.margin10-right{
+	margin-right:10px;
+}
+.margin20-top{
+	margin-top: 20px;
 }
 .login-container{
 	font-weight: 100;
@@ -8,7 +16,7 @@
 	width: 440px;
 	margin-left: -190px;
 	left: 50%;
-	margin-top:24%;
+	margin-top:15%;
 }
 .input-controls {
 	height: 55px;
@@ -33,3 +41,30 @@
 	font-size:20px;
 	text-decoration:underline;
 }
+
+/*Events calendar*/
+.events-calendar-heading{
+	font-size: 20px;
+    font-weight: bold;
+    color: #848181;
+}
+.border-bottom{
+	padding:15px 0 0 0;
+	border-bottom: 1px solid #ddd;
+}
+.clear{
+	clear:both;
+}
+.profile{
+	color:#bbb;
+	font-size:30px;
+}
+.jumbotron  .list-sub-items{
+	margin-bottom: 0;
+    font-size: 14px;
+}
+.pending-item{
+	border-left: 3px solid red;
+}
+
+.    

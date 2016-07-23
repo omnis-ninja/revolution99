@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .controller('HomeController', HomeController);
+        .controller('EventsCalendarController', EventsCalendarController);
 
-    HomeController.$inject = ['UserService', '$rootScope'];
-    function HomeController(UserService, $rootScope) {
+    EventsCalendarController.$inject = ['$rootScope'];
+    function EventsCalendarController($rootScope) {
         var vm = this;
 
         initController();
