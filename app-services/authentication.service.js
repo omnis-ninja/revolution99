@@ -10,13 +10,13 @@
         var service = {};
 
         service.Login = Login;
+        service.ForgotPassword = ForgotPassword;
         service.SetCredentials = SetCredentials;
         service.ClearCredentials = ClearCredentials;
 
         return service;
 
         function Login(username, password, callback) {
-            
             $http({
 			  method: 'POST',
 			  url: '/api/authenticate'
@@ -24,9 +24,21 @@
 			    	callback(response);
 			  }, function errorCallback(response) {
 			    	response = { success: false, message: 'Username or password is incorrect' };
-			    	$location.path('/register');
+			    	callback(response); 	
 			  });
 		}
+		
+		function ForgotPassword(badgeNumber, email, callback) {
+			$http({
+			  method: 'POST',
+			  url: '/api/forgotPassword'
+			}).then(function successCallback(response) {
+			    	callback(response);
+			  }, function errorCallback(response) {
+			    	response = { success: false, message: 'There is a problem resetting your password.Please contact support' };
+			    	callback(response);
+			  });
+		};
 
         function SetCredentials(username, password) {
             var authdata = Base64.encode(username + ':' + password);

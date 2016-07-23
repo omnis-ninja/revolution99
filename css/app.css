@@ -25,3 +25,11 @@
 	white-space: nowrap;
 	width:100%;
 }
+.login-caption{
+	color:#777 !important;
+}
+.forgot-password{
+	margin-top:20px;
+	font-size:20px;
+	text-decoration:underline;
+}
