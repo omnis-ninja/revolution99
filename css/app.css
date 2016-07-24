@@ -1,22 +1,18 @@
-﻿body{
-	background-color:#e9f1f4;
+﻿body {
+	background-color: #e9f1f4;
 }
-body .jumbotron{
-	background-color:#e9f1f4;
+body .jumbotron {
+	background-color: #e9f1f4;
 }
-.margin10-right{
-	margin-right:10px;
+.margin10-right {
+	margin-right: 10px;
 }
-.margin20-top{
+.margin20-top {
 	margin-top: 20px;
 }
-.login-container{
+.login-container {
 	font-weight: 100;
-	position: absolute;
-	width: 440px;
-	margin-left: -190px;
-	left: 50%;
-	margin-top:15%;
+	margin:15% auto;
 }
 .input-controls {
 	height: 55px;
@@ -31,65 +27,88 @@ body .jumbotron{
 	word-wrap: normal;
 	word-break: normal;
 	white-space: nowrap;
-	width:100%;
 }
-.login-caption{
-	color:#777 !important;
+.login-caption {
+	color: #777 !important;
 }
-.forgot-password{
-	margin-top:20px;
-	font-size:20px;
-	text-decoration:underline;
+.forgot-password {
+	margin-top: 20px;
+	font-size: 20px;
+	text-decoration: underline;
 }
 
 /*Events calendar*/
-.events-calendar-heading{
+.events-calendar-heading {
 	font-size: 20px;
-    font-weight: bold;
-    color: #848181;
+	font-weight: bold;
+	color: #848181;
 }
-.border-bottom{
-	padding:15px 0 0 0;
+.border-bottom {
+	padding: 15px 0 0 0;
 	border-bottom: 1px solid #ddd;
 }
-.clear{
-	clear:both;
+.clear {
+	clear: both;
 }
-.profile{
-	color:#bbb;
-	font-size:30px;
+.profile {
+	color: #bbb;
+	font-size: 30px;
 }
-.jumbotron  .list-sub-items{
+.jumbotron  .list-sub-items {
 	margin-bottom: 0;
-    font-size: 14px;
-    letter-spacing: .1em;
+	font-size: 14px;
+	letter-spacing: .1em;
 }
-.jumbotron  .list-sub-items .heading{
+.jumbotron  .list-sub-items .heading {
 	text-transform: uppercase;
-    font-size: 11px;
-    color:#888;
+	font-size: 11px;
+	color: #888;
 }
-.pending-item{
+.pending-item {
 	border-left: 3px solid red;
 }
-.normal-item{
+.normal-item {
 	border-left: 3px solid #bbb;
 }
-.events-calendar-container a.list-group-item{
+.events-calendar-container a.list-group-item {
 	margin-bottom: 3px;
-	color:#999;
+	color: #999;
 }
 
-.list-sub-items{
-	color:#b2abab;
+.list-sub-items {
+	color: #b2abab;
 }
-.month-events{
-	margin-top:50px;
+.month-events {
+	margin-top: 50px;
 }
-.add-event{
-	margin-top:-6px;
+.add-event {
+	margin-top: 8px;
 }
 a.list-group-item .list-group-item-heading {
-    color: #292d3f;
+	color: #292d3f;
+}
+@media only screen and (min-device-width: 800px) {
+	.login-container {
+		
+	}
+}
+
+/*iPhone 6 Plus Media Queries*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+	.login-container {
+		
+	}
+}
+/*iPhone 6 Media Queries*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+	.login-container {
+		
+	}
+}
+/*iPhone 5 & 5S in portrait & landscape*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+	.login-container {
+		
+	}
 }
 .    
