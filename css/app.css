@@ -62,9 +62,34 @@ body .jumbotron{
 .jumbotron  .list-sub-items{
 	margin-bottom: 0;
     font-size: 14px;
+    letter-spacing: .1em;
+}
+.jumbotron  .list-sub-items .heading{
+	text-transform: uppercase;
+    font-size: 11px;
+    color:#888;
 }
 .pending-item{
 	border-left: 3px solid red;
 }
+.normal-item{
+	border-left: 3px solid #bbb;
+}
+.events-calendar-container a.list-group-item{
+	margin-bottom: 3px;
+	color:#999;
+}
 
+.list-sub-items{
+	color:#b2abab;
+}
+.month-events{
+	margin-top:50px;
+}
+.add-event{
+	margin-top:-6px;
+}
+a.list-group-item .list-group-item-heading {
+    color: #292d3f;
+}
 .    
