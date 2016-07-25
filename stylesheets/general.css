@@ -1,0 +1,157 @@
+/* line 1, ../sass/general.scss */
+body {
+  background-color: #e9f1f4;
+}
+/* line 3, ../sass/general.scss */
+body .jumbotron {
+  background-color: #e9f1f4;
+  padding-top: 0;
+}
+/* line 7, ../sass/general.scss */
+body .container-fluid {
+  padding: 0;
+}
+
+/* line 11, ../sass/general.scss */
+.navbar-default {
+  background-color: #3f9ac3;
+  height: 60px;
+}
+/* line 15, ../sass/general.scss */
+.navbar-default .navbar-brand img {
+  width: 55px;
+  margin: 0px 13px;
+}
+/* line 21, ../sass/general.scss */
+.navbar-default .profile-pic img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 12px 10px;
+}
+
+/* line 29, ../sass/general.scss */
+.margin10-right {
+  margin-right: 10px;
+}
+
+/* line 32, ../sass/general.scss */
+.margin20-top {
+  margin-top: 20px;
+}
+
+/* line 35, ../sass/general.scss */
+.login-container {
+  font-weight: 100;
+  margin: 15% auto;
+}
+/* line 38, ../sass/general.scss */
+.login-container .input-controls {
+  height: 55px;
+  padding: 0 14px;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  font-size: 1.6em;
+  border: none;
+  margin: 10px 0;
+  line-height: 1.6em;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: nowrap;
+}
+/* line 52, ../sass/general.scss */
+.login-container .login-caption {
+  color: #777 !important;
+}
+/* line 55, ../sass/general.scss */
+.login-container .forgot-password {
+  margin-top: 20px;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+/*Events calendar*/
+/* line 66, ../sass/general.scss */
+.events-calendar-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #848181;
+}
+
+/* line 71, ../sass/general.scss */
+.border-bottom {
+  padding: 15px 0 0 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 75, ../sass/general.scss */
+.clear {
+  clear: both;
+}
+
+/* line 78, ../sass/general.scss */
+.profile {
+  color: #bbb;
+  font-size: 30px;
+}
+
+/* line 83, ../sass/general.scss */
+.jumbotron .list-sub-items {
+  margin-bottom: 0;
+  font-size: 14px;
+  letter-spacing: .1em;
+}
+/* line 87, ../sass/general.scss */
+.jumbotron .list-sub-items .heading {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #888;
+}
+
+/* line 96, ../sass/general.scss */
+.events-calendar-container {
+  padding: 0 30px;
+}
+/* line 98, ../sass/general.scss */
+.events-calendar-container a.list-group-item {
+  margin-bottom: 3px;
+  color: #999;
+  cursor: pointer;
+}
+/* line 103, ../sass/general.scss */
+.events-calendar-container .pending-item {
+  border-left: 3px solid red;
+}
+/* line 106, ../sass/general.scss */
+.events-calendar-container .normal-item {
+  border-left: 3px solid #bbb;
+}
+/* line 109, ../sass/general.scss */
+.events-calendar-container .list-sub-items {
+  color: #b2abab;
+}
+/* line 112, ../sass/general.scss */
+.events-calendar-container .month-events {
+  margin-top: 50px;
+}
+/* line 115, ../sass/general.scss */
+.events-calendar-container .add-event {
+  margin-top: 8px;
+}
+/* line 118, ../sass/general.scss */
+.events-calendar-container .list-group-item-heading {
+  color: #292d3f;
+}
+/* line 121, ../sass/general.scss */
+.events-calendar-container .item-details {
+  border-right: 1px solid #c8c8c8;
+  border-left: 1px solid #c8c8c8;
+  border-bottom: 1px solid #c8c8c8;
+  background-color: #f8f7f7;
+  margin: -3px 0 10px 0;
+}
+/* line 127, ../sass/general.scss */
+.events-calendar-container .item-details .details {
+  padding: 30px 10px;
+}
