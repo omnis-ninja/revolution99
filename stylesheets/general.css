@@ -13,16 +13,21 @@ body .container-fluid {
 }
 
 /* line 11, ../sass/general.scss */
+.hand-cursor {
+  cursor: pointer;
+}
+
+/* line 14, ../sass/general.scss */
 .navbar-default {
   background-color: #3f9ac3;
   height: 60px;
 }
-/* line 15, ../sass/general.scss */
+/* line 18, ../sass/general.scss */
 .navbar-default .navbar-brand img {
   width: 55px;
   margin: 0px 13px;
 }
-/* line 21, ../sass/general.scss */
+/* line 24, ../sass/general.scss */
 .navbar-default .profile-pic img {
   width: 35px;
   height: 35px;
@@ -30,22 +35,22 @@ body .container-fluid {
   margin: 12px 10px;
 }
 
-/* line 29, ../sass/general.scss */
+/* line 32, ../sass/general.scss */
 .margin10-right {
   margin-right: 10px;
 }
 
-/* line 32, ../sass/general.scss */
+/* line 35, ../sass/general.scss */
 .margin20-top {
   margin-top: 20px;
 }
 
-/* line 35, ../sass/general.scss */
+/* line 38, ../sass/general.scss */
 .login-container {
   font-weight: 100;
   margin: 15% auto;
 }
-/* line 38, ../sass/general.scss */
+/* line 41, ../sass/general.scss */
 .login-container .input-controls {
   height: 55px;
   padding: 0 14px;
@@ -60,11 +65,11 @@ body .container-fluid {
   word-break: normal;
   white-space: nowrap;
 }
-/* line 52, ../sass/general.scss */
+/* line 55, ../sass/general.scss */
 .login-container .login-caption {
   color: #777 !important;
 }
-/* line 55, ../sass/general.scss */
+/* line 58, ../sass/general.scss */
 .login-container .forgot-password {
   margin-top: 20px;
   font-size: 20px;
@@ -72,86 +77,100 @@ body .container-fluid {
 }
 
 /*Events calendar*/
-/* line 66, ../sass/general.scss */
+/* line 69, ../sass/general.scss */
 .events-calendar-heading {
   font-size: 20px;
   font-weight: bold;
   color: #848181;
 }
 
-/* line 71, ../sass/general.scss */
+/* line 74, ../sass/general.scss */
 .border-bottom {
   padding: 15px 0 0 0;
   border-bottom: 1px solid #ddd;
 }
 
-/* line 75, ../sass/general.scss */
+/* line 78, ../sass/general.scss */
 .clear {
   clear: both;
 }
 
-/* line 78, ../sass/general.scss */
+/* line 81, ../sass/general.scss */
 .profile {
   color: #bbb;
   font-size: 30px;
 }
 
-/* line 83, ../sass/general.scss */
+/* line 86, ../sass/general.scss */
 .jumbotron .list-sub-items {
   margin-bottom: 0;
   font-size: 14px;
   letter-spacing: .1em;
 }
-/* line 87, ../sass/general.scss */
+/* line 90, ../sass/general.scss */
 .jumbotron .list-sub-items .heading {
   text-transform: uppercase;
   font-size: 11px;
   color: #888;
 }
 
-/* line 96, ../sass/general.scss */
+/* line 99, ../sass/general.scss */
 .events-calendar-container {
   padding: 0 30px;
 }
-/* line 98, ../sass/general.scss */
+/* line 101, ../sass/general.scss */
 .events-calendar-container a.list-group-item {
-  margin-bottom: 3px;
+  margin-bottom: 1px;
   color: #999;
   cursor: pointer;
+  padding: 10px;
 }
-/* line 103, ../sass/general.scss */
+/* line 106, ../sass/general.scss */
+.events-calendar-container a.list-group-item p {
+  margin-bottom: 2px;
+  line-height: 18px;
+}
+/* line 111, ../sass/general.scss */
 .events-calendar-container .pending-item {
   border-left: 3px solid red;
 }
-/* line 106, ../sass/general.scss */
+/* line 114, ../sass/general.scss */
 .events-calendar-container .normal-item {
   border-left: 3px solid #bbb;
 }
-/* line 109, ../sass/general.scss */
+/* line 117, ../sass/general.scss */
 .events-calendar-container .list-sub-items {
   color: #b2abab;
 }
-/* line 112, ../sass/general.scss */
+/* line 120, ../sass/general.scss */
 .events-calendar-container .month-events {
   margin-top: 50px;
 }
-/* line 115, ../sass/general.scss */
+/* line 123, ../sass/general.scss */
 .events-calendar-container .add-event {
-  margin-top: 8px;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 500px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  margin-top: 13px;
 }
-/* line 118, ../sass/general.scss */
+/* line 133, ../sass/general.scss */
 .events-calendar-container .list-group-item-heading {
-  color: #292d3f;
+  color: #7a7777;
+  font-size: 14px;
 }
-/* line 121, ../sass/general.scss */
+/* line 137, ../sass/general.scss */
 .events-calendar-container .item-details {
   border-right: 1px solid #c8c8c8;
   border-left: 1px solid #c8c8c8;
   border-bottom: 1px solid #c8c8c8;
-  background-color: #f8f7f7;
+  background-color: #fff;
   margin: -3px 0 10px 0;
 }
-/* line 127, ../sass/general.scss */
+/* line 143, ../sass/general.scss */
 .events-calendar-container .item-details .details {
-  padding: 30px 10px;
+  padding: 10px;
 }

@@ -8,6 +8,9 @@
 	  padding:0;
 	}
 }
+.hand-cursor{
+  cursor:pointer;
+}
 .navbar-default{
   background-color:#3f9ac3;
   height: 60px;
@@ -96,9 +99,14 @@
 .events-calendar-container{
   padding: 0 30px;
   a.list-group-item {
-    margin-bottom: 3px;
+    margin-bottom: 1px;
     color: #999;
     cursor:pointer;
+    padding:10px;
+    p{
+      margin-bottom:2px;
+      line-height: 18px;
+    }
   }
   .pending-item {
     border-left: 3px solid red;
@@ -113,19 +121,27 @@
     margin-top: 50px;
   }
   .add-event {
-    margin-top: 8px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 500px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-top:13px;
   }
   .list-group-item-heading {
-    color: #292d3f;
+    color: #7a7777;
+    font-size:14px;
   }
   .item-details{
     border-right:1px solid #c8c8c8;
     border-left:1px solid #c8c8c8;
     border-bottom:1px solid #c8c8c8;
-    background-color:#f8f7f7;
+    background-color:#fff;
     margin:-3px 0 10px 0;
     .details{
-      padding:30px 10px;
+      padding:10px;
     }
   }
 }
