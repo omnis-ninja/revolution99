@@ -1,6 +1,6 @@
 ﻿<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-offset-4 col-lg-4">
 	<div class="col-xs-12 col-md-12 login-container">
-		<h1 class="text-center login-caption">Hello !</h1>
+		<h1 class="text-center login-caption">Sign in</h1>
 		<form name="form" ng-submit="vm.login()" role="form">
 			<div class="row" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
 
@@ -13,7 +13,7 @@
 			</div>
 			<div class="form-actions text-center row">
 				<button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-lg btn-block btn-primary">
-					Submit
+					Sign me in
 				</button>
 				<a href="#/forgotPassword" class="btn btn-link forgot-password">Forgot password</a>
 			</div>

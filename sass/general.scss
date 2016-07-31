@@ -35,7 +35,7 @@
 .margin20-top {
 	margin-top: 20px;
 }
-.login-container {
+.login-container, .profile-container {
 	font-weight: 100;
 	margin:15% auto;
 	.input-controls {
@@ -145,4 +145,41 @@
     }
   }
 }
- 
+.border{
+  border-bottom:1px solid #ddd;
+  margin: 40px 0;
+}
+
+
+.profile-container{
+    margin:20px auto;
+  .image-container{
+    background-color: #f9fafb;
+    text-align: center;
+    border: 3px solid #eaedf1;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin:0 auto;
+    img{
+      height: 100%;
+      max-width: 100%;
+      width: auto;
+    }
+  }
+  .sub-text{
+    color:#aaa;
+    font-size:18px;
+  }
+  label{
+    font-weight:normal;
+    font-size:20px;
+    color:#7f7979;
+  }
+  h2{
+    color:#7f7979;
+  }
+}

@@ -46,12 +46,12 @@ body .container-fluid {
 }
 
 /* line 38, ../sass/general.scss */
-.login-container {
+.login-container, .profile-container {
   font-weight: 100;
   margin: 15% auto;
 }
 /* line 41, ../sass/general.scss */
-.login-container .input-controls {
+.login-container .input-controls, .profile-container .input-controls {
   height: 55px;
   padding: 0 14px;
   border-radius: 12px;
@@ -66,11 +66,11 @@ body .container-fluid {
   white-space: nowrap;
 }
 /* line 55, ../sass/general.scss */
-.login-container .login-caption {
+.login-container .login-caption, .profile-container .login-caption {
   color: #777 !important;
 }
 /* line 58, ../sass/general.scss */
-.login-container .forgot-password {
+.login-container .forgot-password, .profile-container .forgot-password {
   margin-top: 20px;
   font-size: 20px;
   text-decoration: underline;
@@ -173,4 +173,49 @@ body .container-fluid {
 /* line 143, ../sass/general.scss */
 .events-calendar-container .item-details .details {
   padding: 10px;
+}
+
+/* line 148, ../sass/general.scss */
+.border {
+  border-bottom: 1px solid #ddd;
+  margin: 40px 0;
+}
+
+/* line 154, ../sass/general.scss */
+.profile-container {
+  margin: 20px auto;
+}
+/* line 156, ../sass/general.scss */
+.profile-container .image-container {
+  background-color: #f9fafb;
+  text-align: center;
+  border: 3px solid #eaedf1;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+/* line 167, ../sass/general.scss */
+.profile-container .image-container img {
+  height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+/* line 173, ../sass/general.scss */
+.profile-container .sub-text {
+  color: #aaa;
+  font-size: 18px;
+}
+/* line 177, ../sass/general.scss */
+.profile-container label {
+  font-weight: normal;
+  font-size: 20px;
+  color: #7f7979;
+}
+/* line 182, ../sass/general.scss */
+.profile-container h2 {
+  color: #7f7979;
 }

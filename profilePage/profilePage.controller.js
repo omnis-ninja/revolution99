@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .controller('EventsCalendarController', EventsCalendarController);
+        .controller('ProfilePageController', ProfilePageController);
 
-    EventsCalendarController.$inject = ['$rootScope'];
-    function EventsCalendarController($rootScope) {
+    ProfilePageController.$inject = ['$rootScope'];
+    function ProfilePageController($rootScope) {
         var vm = this;
 
         initController();
