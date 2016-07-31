@@ -132,21 +132,27 @@ body .container-fluid {
 }
 /* line 111, ../sass/general.scss */
 .events-calendar-container .pending-item {
-  border-left: 3px solid red;
+  border-left: 5px solid #fb0c05;
 }
-/* line 114, ../sass/general.scss */
+/* line 113, ../sass/general.scss */
+.events-calendar-container .pending-item .label {
+  font-size: 12px;
+  letter-spacing: .1em;
+  background-color: #fb0c05;
+}
+/* line 119, ../sass/general.scss */
 .events-calendar-container .normal-item {
-  border-left: 3px solid #bbb;
+  border-left: 5px solid #c2b9b9;
 }
-/* line 117, ../sass/general.scss */
+/* line 122, ../sass/general.scss */
 .events-calendar-container .list-sub-items {
   color: #b2abab;
 }
-/* line 120, ../sass/general.scss */
+/* line 125, ../sass/general.scss */
 .events-calendar-container .month-events {
   margin-top: 50px;
 }
-/* line 123, ../sass/general.scss */
+/* line 128, ../sass/general.scss */
 .events-calendar-container .add-event {
   padding: 0;
   font-size: 12px;
@@ -157,12 +163,12 @@ body .container-fluid {
   text-align: center;
   margin-top: 13px;
 }
-/* line 133, ../sass/general.scss */
+/* line 138, ../sass/general.scss */
 .events-calendar-container .list-group-item-heading {
   color: #7a7777;
   font-size: 14px;
 }
-/* line 137, ../sass/general.scss */
+/* line 142, ../sass/general.scss */
 .events-calendar-container .item-details {
   border-right: 1px solid #c8c8c8;
   border-left: 1px solid #c8c8c8;
@@ -170,22 +176,30 @@ body .container-fluid {
   background-color: #fff;
   margin: -3px 0 10px 0;
 }
-/* line 143, ../sass/general.scss */
+/* line 148, ../sass/general.scss */
 .events-calendar-container .item-details .details {
   padding: 10px;
 }
 
-/* line 148, ../sass/general.scss */
+/* line 153, ../sass/general.scss */
 .border {
   border-bottom: 1px solid #ddd;
   margin: 40px 0;
 }
 
-/* line 154, ../sass/general.scss */
+/* line 157, ../sass/general.scss */
+.btn-link.signout {
+  color: #fff;
+  font-size: 20px;
+  line-height: 42px;
+  margin-right: 4px;
+}
+
+/* line 164, ../sass/general.scss */
 .profile-container {
   margin: 20px auto;
 }
-/* line 156, ../sass/general.scss */
+/* line 166, ../sass/general.scss */
 .profile-container .image-container {
   background-color: #f9fafb;
   text-align: center;
@@ -198,24 +212,25 @@ body .container-fluid {
   border-radius: 50%;
   margin: 0 auto;
 }
-/* line 167, ../sass/general.scss */
+/* line 177, ../sass/general.scss */
 .profile-container .image-container img {
   height: 100%;
   max-width: 100%;
   width: auto;
 }
-/* line 173, ../sass/general.scss */
+/* line 183, ../sass/general.scss */
 .profile-container .sub-text {
   color: #aaa;
   font-size: 18px;
 }
-/* line 177, ../sass/general.scss */
+/* line 187, ../sass/general.scss */
 .profile-container label {
   font-weight: normal;
   font-size: 20px;
   color: #7f7979;
+  line-height: 25px;
 }
-/* line 182, ../sass/general.scss */
+/* line 193, ../sass/general.scss */
 .profile-container h2 {
   color: #7f7979;
 }

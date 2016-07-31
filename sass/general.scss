@@ -109,10 +109,15 @@
     }
   }
   .pending-item {
-    border-left: 3px solid red;
+    border-left: 5px solid #fb0c05;
+    .label{
+      font-size:12px;
+      letter-spacing: .1em;
+      background-color:#fb0c05;
+    }
   }
   .normal-item {
-    border-left: 3px solid #bbb;
+    border-left: 5px solid #c2b9b9;
   }
   .list-sub-items {
     color: #b2abab;
@@ -149,7 +154,12 @@
   border-bottom:1px solid #ddd;
   margin: 40px 0;
 }
-
+.btn-link.signout{
+  color: #fff;
+  font-size: 20px;
+  line-height: 42px;
+  margin-right: 4px;
+}
 
 .profile-container{
     margin:20px auto;
@@ -178,6 +188,7 @@
     font-weight:normal;
     font-size:20px;
     color:#7f7979;
+    line-height:25px;
   }
   h2{
     color:#7f7979;
