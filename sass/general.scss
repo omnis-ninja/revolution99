@@ -14,18 +14,15 @@
 .navbar-default{
   background-color:#3f9ac3;
   height: 60px;
-  .navbar-brand{
-    img{
-      width: 55px;
-      margin: 0px 13px;
-    }
+  .menu{
+    font-size: 25px;
+    color: #fff;
+    line-height: 58px;
   }
-  .profile-pic{
-    img{
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      margin: 12px 10px;
+  .menu-options{
+    left:20px;
+    a{
+      line-height:35px;
     }
   }
 }
@@ -70,6 +67,7 @@
 	font-size: 20px;
 	font-weight: bold;
 	color: #848181;
+	margin-top: 85px;
 }
 .border-bottom {
 	padding: 15px 0 0 0;
@@ -98,6 +96,9 @@
 
 .events-calendar-container{
   padding: 0 30px;
+  .co-ordinator{
+    margin:30px 0 10px 0;
+  }
   a.list-group-item {
     margin-bottom: 1px;
     color: #999;
@@ -122,22 +123,27 @@
   .list-sub-items {
     color: #b2abab;
   }
-  .month-events {
-    margin-top: 50px;
-  }
   .add-event {
     padding: 0;
     font-size: 12px;
     line-height: 1.5;
     border-radius: 500px;
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     margin-top:13px;
   }
   .list-group-item-heading {
-    color: #7a7777;
-    font-size:14px;
+    color: #333;
+    font-size:18px;
+    letter-spacing: 0.1em;
+    line-height: 30px;
+  }
+  .skill{
+    margin-left:10px;
+  }
+  .events-label{
+    line-height:60px;
   }
   .item-details{
     border-right:1px solid #c8c8c8;
@@ -162,7 +168,7 @@
 }
 
 .profile-container{
-    margin:20px auto;
+    margin:85px auto;
   .image-container{
     background-color: #f9fafb;
     text-align: center;

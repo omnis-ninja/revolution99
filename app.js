@@ -33,9 +33,15 @@
                 controllerAs: 'vm'
             })
             
-            .when('/eventsCalendar', {
-                controller: 'EventsCalendarController',
-                templateUrl: 'eventsCalendar/eventsCalendar.view.html',
+            .when('/scheduledEventsCalendar', {
+                controller: 'ScheduledEventsCalendarController',
+                templateUrl: 'eventsCalendar/scheduledEventsCalendar.view.html',
+                controllerAs: 'vm'
+            })
+            
+            .when('/upcomingEventsCalendar', {
+                controller: 'UpcomingEventsCalendarController',
+                templateUrl: 'eventsCalendar/upcomingEventsCalendar.view.html',
                 controllerAs: 'vm'
             })
             
@@ -64,7 +70,7 @@
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/login', '/eventsCalendar','/forgotPassword','/forgotPasswordSuccess','/profilePage']) === -1;
+            var restrictedPage = $.inArray($location.path(), ['/login', '/scheduledEventsCalendar','/upcomingEventsCalendar', '/forgotPassword','/forgotPasswordSuccess','/profilePage']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path('/login');

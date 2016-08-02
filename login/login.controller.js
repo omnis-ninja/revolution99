@@ -27,7 +27,7 @@
                     AuthenticationService.SetCredentials(vm.username, vm.password);
                     $location.path('/');
                 } else {
-                    $location.path('/eventsCalendar');
+                    $location.path('/scheduledEventsCalendar');
                     FlashService.Error(response.message);
                     vm.dataLoading = false;
                 }
