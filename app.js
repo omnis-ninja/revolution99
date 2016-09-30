@@ -2,12 +2,13 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'ngCookies'])
+        .module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', 'DigestAuthInterceptor'])
         .config(config)
         .run(run);
 
-    config.$inject = ['$routeProvider', '$locationProvider'];
-    function config($routeProvider, $locationProvider) {
+    config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
+    function config($routeProvider, $locationProvider, $httpProvider) {
+    	$httpProvider.interceptors.push('digestAuthInterceptor');
         $routeProvider
             .when('/', {
                 controller: 'HomeController',
@@ -33,13 +34,13 @@
                 controllerAs: 'vm'
             })
             
-            .when('/scheduledEventsCalendar', {
+            .when('/upcomingEventsCalendar', {
                 controller: 'ScheduledEventsCalendarController',
-                templateUrl: 'eventsCalendar/scheduledEventsCalendar.view.html',
+                templateUrl: 'eventsCalendar/upcomingEventsCalendar.view.html',
                 controllerAs: 'vm'
             })
             
-            .when('/upcomingEventsCalendar', {
+            .when('/upcomingEventsCalendars', {
                 controller: 'UpcomingEventsCalendarController',
                 templateUrl: 'eventsCalendar/upcomingEventsCalendar.view.html',
                 controllerAs: 'vm'

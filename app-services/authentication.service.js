@@ -3,32 +3,38 @@
 
     angular.module('app').factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', '$location'];
-    function AuthenticationService($http, $cookieStore, $rootScope, $timeout, $location) {
+    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', 'localStorageService'];
+    function AuthenticationService($http, $cookieStore, $rootScope, localStorageService) {
         var service = {};
-
+		
+		service.GetAccessToken = GetAccessToken;
         service.Login = Login;
         service.ForgotPassword = ForgotPassword;
-        service.SetCredentials = SetCredentials;
         service.ClearCredentials = ClearCredentials;
+        getConfigDetails();
 
         return service;
-
+        
+        /*
+         * Get access token to call web API
+         */
+        function GetAccessToken() {
+		    return $http({
+			    method: 'GET',
+			    url: $rootScope.configData.webApi +'genAppAuthToken',
+			    headers: {'Content-Type': 'application/json'}
+				});
+		}
 		/*
 		 * Login the user
 		 */
-        function Login(username, password, callback) {
-            $http({
+        function Login(credentials) {
+            return $http({
                 method: 'POST',
-                url: '/api/authenticate'
-            }).then(function successCallback(response) {
-                callback(response);
-            }, function errorCallback(response) {
-                response = {
-                    success: false,
-                    message: 'Username or password is incorrect'
-                };
-                callback(response);
+                url: $rootScope.configData.webApi + 'authenticateUser',
+				data : JSON.stringify(credentials),
+				cache:false,
+				headers: { 'Content-Type': 'application/json' }
             });
         }
 		
@@ -51,23 +57,6 @@
         };
 		
 		/*
-		 * Set the credentials for future use
-		 */
-        function SetCredentials(username, password) {
-            var authdata = Base64.encode(username + ':' + password);
-
-            $rootScope.globals = {
-                currentUser: {
-                    username: username,
-                    authdata: authdata
-                }
-            };
-
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-            $cookieStore.put('globals', $rootScope.globals);
-        }
-		
-		/*
 		 * Clear the user credentials
 		 */
         function ClearCredentials() {
@@ -75,6 +64,19 @@
             $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
         }
+        
+        /*
+         * Gets config details
+         */
+        function getConfigDetails() {
+	        $http.get('config/config.json')
+	        .success(function(data) {
+	            $rootScope.configData=data;
+	        })
+	        .error(function(data,status,error,config){
+	            $rootScope.configData = [{heading:"Error",description:"Could not load json   data"}];
+	        });
+	    }
 
     }
 

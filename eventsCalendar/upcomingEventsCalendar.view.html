@@ -29,87 +29,48 @@
 		</button>
 	</div>
 	<div class="clear"></div>
+	
+	<div ng-show="$scope.upcomingEvents.length==0">
+		<img src="img/ajax-loader.gif">
+	</div>
+	
 
 	<div class="month-events">
-		 <ul class="nav nav-tabs" id="myTab">
-			<li class="active hand-cursor"><a data-target="#month1" data-toggle="tab">June</a></li>
-			<li class="hand-cursor"><a data-target="#month2" data-toggle="tab">July</a></li>
-			<li class="hand-cursor"><a data-target="#month3" data-toggle="tab">August</a></li>
+		<ul class="nav nav-tabs" id="myTab">
+		    <li ng-repeat="upcomingEvent in upcomingEvents track by $index" class="active hand-cursor">
+		    	<a data-target="#month1" data-toggle="tab">{{upcomingEvent[0]}}</a>
+		    </li>
 		</ul>
 
 		<div class="tab-content">
 		  <div class="tab-pane active" id="month1">
 		  	<div class="list-group">
-				<a class="list-group-item normal-item" data-toggle="collapse" data-target="#item11">
-					<p> 
-						<span class="list-group-item-heading">Event name June</span>
-						<span class="pull-right"><button class="btn btn-sm btn-success add-event"><i class="fa fa-plus"></i></button></span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Type : </strong></span><span>Officer</span>
-						<span class="heading skill"><strong>Skill : </strong></span><span>Mounted</span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span>06/18/16 08:00 - 06/18/16 10:00</span>
-					</p>
-				</a>
-				<div class="collapse item-details" id="item11">
-				  <div class="details">
-				  	<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Showup Loation : </strong></span><span>Airport Area</span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Coordinator : </strong></span><span>Thomas</span>
-					</p>
-				  </div>
-				</div>
-		
-				<a class="list-group-item normal-item" data-toggle="collapse" data-target="#item12"> 
-					<p> 
-						<span class="list-group-item-heading">Event name June</span>
-						<span class="pull-right"><button class="btn btn-sm btn-success add-event"><i class="fa fa-plus"></i></button></span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Type : </strong></span><span>Dispatcher</span>
-						<span class="heading skill"><strong>Skill : </strong></span><span>Bike patrol</span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span>06/18/16 08:00 - 06/18/16 10:00</span>
-					</p>
-				</a>
-				<div class="collapse item-details" id="item12">
-				  <div class="details">
-				  	<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Showup Loation : </strong></span><span>Airport Area</span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Coordinator : </strong></span><span>Thomas</span>
-					</p>
-				  </div>
-				</div>
-				
-				<a class="list-group-item normal-item" data-toggle="collapse" data-target="#item13">
-					<p> 
-						<span class="list-group-item-heading">Event name June</span>
-						<span class="pull-right"><button class="btn btn-sm btn-success add-event"><i class="fa fa-plus"></i></button></span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Type : </strong></span><span>Sergeant</span>
-						<span class="heading skill"><strong>Skill : </strong></span><span>Mounted</span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span>06/18/16 08:00 - 06/18/16 10:00</span>
-					</p>
-				</a>
-				<div class="collapse item-details" id="item13">
-				  <div class="details">
-				  	<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Showup Loation : </strong></span><span>Airport Area</span>
-					</p>
-					<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Coordinator : </strong></span><span>Thomas</span>
-					</p>
-				  </div>
+		  		<div ng-repeat="upcomingEvent in upcomingEvents track by $index">
+		  			<div ng-repeat="event in upcomingEvent[1] track by $index">
+						<a class="list-group-item normal-item" data-toggle="collapse" data-target="#item11">
+							<p> 
+								<span class="list-group-item-heading">{{event[2]}}</span>
+								<span class="pull-right"><button class="btn btn-sm btn-success add-event"><i class="fa fa-plus"></i></button></span>
+							</p>
+							<p class="list-group-item-text list-sub-items">
+								<span class="heading"><strong>Type : </strong></span><span>{{event[6]}}</span>
+								<span class="heading skill"><strong>Skill : </strong></span><span>{{event[7]}}</span>
+							</p>
+							<p class="list-group-item-text list-sub-items">
+								<span>{{event[4]}} - {{event[5]}}</span>
+							</p>
+						</a>
+						<div class="collapse item-details" id="item11">
+						  <div class="details">
+						  	<p class="list-group-item-text list-sub-items">
+								<span class="heading"><strong>Showup Loation : </strong></span><span>{{event[3]}}</span>
+							</p>
+							<p class="list-group-item-text list-sub-items">
+								<span class="heading"><strong>Coordinator : </strong></span><span></span>
+							</p>
+						  </div>
+						</div>
+					</div>
 				</div>
 			</div>
 		  </div>
