@@ -34,13 +34,13 @@
                 controllerAs: 'vm'
             })
             
-            .when('/upcomingEventsCalendar', {
+            .when('/scheduledEventsCalendar', {
                 controller: 'ScheduledEventsCalendarController',
-                templateUrl: 'eventsCalendar/upcomingEventsCalendar.view.html',
+                templateUrl: 'eventsCalendar/scheduledEventsCalendar.view.html',
                 controllerAs: 'vm'
             })
             
-            .when('/upcomingEventsCalendars', {
+            .when('/upcomingEventsCalendar', {
                 controller: 'UpcomingEventsCalendarController',
                 templateUrl: 'eventsCalendar/upcomingEventsCalendar.view.html',
                 controllerAs: 'vm'

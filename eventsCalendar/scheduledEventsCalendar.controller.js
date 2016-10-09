@@ -10,13 +10,11 @@
         var vm = this;
 		
 		(function initController() {
-            // reset login status
             GetAllEvents();
         })();
 
         function GetAllEvents() {
         	$scope.scheduledEvents = [];
-        	$scope.upcomingEvents = [];
         	var eventDetails = {
         		cDate : '01/04/2016',
         		from_prev_call : $rootScope.for_next_call,
@@ -33,8 +31,8 @@
 					} else {
 						$rootScope.for_next_call = response.data.for_next_call;
 						$rootScope.uID = response.data.uID;
-						$scope.upcomingEvents = (response.data.month_events_list);
-						console.log($scope.upcomingEvents);
+						$scope.scheduledEvents = (response.data.month_events_list[3]);
+						$scope.showScheduledEvents = $scope.scheduledEvents[1].length > 0;	
 					}                    
                 });
         }

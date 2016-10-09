@@ -1,19 +1,24 @@
 ﻿<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header col-xs-12 col-sm-12 col-lg-12">
-      <a class="btn-sm dropdown-toggle hand-cursor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		<span class="glyphicon glyphicon-menu-hamburger menu"></span>
-	  </a>
-	  <ul class="dropdown-menu menu-options">
-	    <li><a href="#scheduledEventsCalendar">My Scheduled events</a></li>
-	    <li><a href="#upcomingEventsCalendar">Upcoming Events</a></li>
-	    <li><a href="#profilePage">My Profile</a></li>
-	  </ul>
-      <a class="pull-right" href='#login'>
-        <button class="btn btn-link signout"><i class="fa fa-sign-out">Sign out</i></button>
-      </a>
-    </div>
-  </div>
+	<div class="container-fluid">
+		<div class="navbar-header col-xs-12 col-sm-12 col-lg-12">
+			<a class="btn-sm dropdown-toggle hand-cursor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="fa fa-bars menu"></span> </a>
+			<ul class="dropdown-menu menu-options">
+				<li>
+					<a href="#scheduledEventsCalendar">My Scheduled events</a>
+				</li>
+				<li>
+					<a href="#upcomingEventsCalendar">Upcoming Events</a>
+				</li>
+				<li>
+					<a href="#profilePage">My Profile</a>
+				</li>
+			</ul>
+			<a class="pull-right" href='#login'>
+			<button class="btn btn-link signout">
+				<i class="fa fa-sign-out">Sign out</i>
+			</button> </a>
+		</div>
+	</div>
 </nav>
 <div class="events-calendar-container">
 	<div class="events-calendar-heading">
@@ -30,53 +35,39 @@
 	</div>
 	<div class="clear"></div>
 	<div class="list-group margin20-top">
-		<a class="list-group-item pending-item" data-toggle="collapse" data-target="#item1"> 
-			<p> 
-				<span class="list-group-item-heading">Event name 1</span>
-				<span class="pull-right events-label"><span class="label label-danger">Pending</span></span>
-			</p>
-			<p class="list-group-item-text list-sub-items">
-				<span class="heading"><strong>Type : </strong></span><span>Officer</span>
-				<span class="heading skill"><strong>Skill : </strong></span><span>Mounted</span>
-			</p>
-			<p class="list-group-item-text list-sub-items">
-				<span>06/18/16 08:00 - 06/18/16 10:00</span>
-			</p>
-		</a>
-		<div class="collapse item-details" id="item1">
-		  <div class="details">
-		  	<p class="list-group-item-text list-sub-items">
-				<span class="heading"><strong>Showup Loation : </strong></span><span>Brisbane playgrounds </span>
-			</p>
-			<p class="list-group-item-text list-sub-items">
-				<span class="heading"><strong>Coordinator : </strong></span><span>Thomas</span>
-			</p>
-		  </div>
+
+		<div id= month{{$index}} ng-repeat="scheduledEvent in scheduledEvents track by $index" ng-show="showScheduledEvents">
+			<div ng-repeat="event in scheduledEvent[1] track by $index">
+				<div class="list-group">
+					<a class="list-group-item normal-item" data-toggle="collapse" data-target=#item{{$parent.$index}}{{$index}}>
+					<p>
+						<span class="list-group-item-heading">{{event[2]}}</span>
+						<span class="pull-right">
+							<button class="btn btn-sm btn-success add-event">
+								<i class="fa fa-plus"></i>
+							</button></span>
+					</p>
+					<p class="list-group-item-text list-sub-items">
+						<span class="heading"><strong>Type : </strong></span><span>{{event[6]}}</span>
+						<span class="heading skill"><strong>Skill : </strong></span><span>{{event[7]}}</span>
+					</p>
+					<p class="list-group-item-text list-sub-items">
+						<span>{{event[4]}} - {{event[5]}}</span>
+					</p> </a>
+					<div class="collapse item-details" id=item{{$parent.$index}}{{$index}}>
+						<div class="details">
+							<p class="list-group-item-text list-sub-items">
+								<span class="heading"><strong>Showup Loation : </strong></span><span>{{event[3]}}</span>
+							</p>
+							<p class="list-group-item-text list-sub-items">
+								<span class="heading"><strong>Coordinator : </strong></span><span></span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-  
-		<a class="list-group-item pending-item" data-toggle="collapse" data-target="#item2"> 
-			<p> 
-				<span class="list-group-item-heading">Event name 2</span>
-				<span class="pull-right events-label"><span class="label label-danger">Pending</span></span>
-			</p>
-			<p class="list-group-item-text list-sub-items">
-				<span class="heading"><strong>Type : </strong></span><span>Officer</span>
-				<span class="heading skill"><strong>Skill : </strong></span><span>Mounted</span>
-			</p>
-			<p class="list-group-item-text list-sub-items">
-				<span>06/18/16 08:00 - 06/18/16 10:00</span>
-			</p>
-		</a>
-		<div class="collapse item-details" id="item2">
-		  <div class="details">
-		  	<p class="list-group-item-text list-sub-items">
-				<span class="heading"><strong>Showup Loation : </strong></span><span>Airport Area</span>
-			</p>
-			<p class="list-group-item-text list-sub-items">
-				<span class="heading"><strong>Coordinator : </strong></span><span>Thomas</span>
-			</p>
-		  </div>
-		</div>	
+
 	</div>
-	
+
 </div>
