@@ -35,11 +35,11 @@
 	</div>
 	<div class="clear"></div>
 
-	<div ng-show="$scope.upcomingEvents.length==0">
+	<div class="text-center" ng-show="upcomingEvents.length==0">
 		<img src="img/ajax-loader.gif">
 	</div>
 
-	<div class="month-events">
+	<div class="month-events" ng-show="showUpcomingEvents">
 		<ul class="nav nav-tabs" role="tablist">
 			<li ng-class="$index == 0 ? 'active' : ''" role="presentation" ng-repeat="upcomingEvent in upcomingEvents track by $index">
 				<a class="active hand-cursor tab-list" role="tab" data-target= #month{{$index}} data-toggle="tab">{{upcomingEvent[0]}}</a>
@@ -54,7 +54,7 @@
 						<p>
 							<span class="list-group-item-heading">{{event[2]}}</span>
 							<span class="pull-right">
-								<button class="btn btn-sm btn-success add-event">
+								<button class="btn btn-sm btn-success add-event" ng-click="$parent.$parent.vm.SubscribeToEvent(event, $event)">
 									<i class="fa fa-plus"></i>
 								</button></span>
 						</p>

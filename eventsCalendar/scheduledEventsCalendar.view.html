@@ -35,37 +35,30 @@
 	</div>
 	<div class="clear"></div>
 	<div class="list-group margin20-top">
-
-		<div id= month{{$index}} ng-repeat="scheduledEvent in scheduledEvents track by $index" ng-show="showScheduledEvents">
-			<div ng-repeat="event in scheduledEvent[1] track by $index">
+		<div id= month{{$index}} ng-repeat="scheduledEvent in scheduledEvents[1] track by $index" ng-show="showScheduledEvents">
 				<div class="list-group">
-					<a class="list-group-item normal-item" data-toggle="collapse" data-target=#item{{$parent.$index}}{{$index}}>
+					<a class="list-group-item normal-item" data-toggle="collapse" data-target=#item{{$index}}>
 					<p>
-						<span class="list-group-item-heading">{{event[2]}}</span>
-						<span class="pull-right">
-							<button class="btn btn-sm btn-success add-event">
-								<i class="fa fa-plus"></i>
-							</button></span>
+						<span class="list-group-item-heading">{{scheduledEvent[2]}}</span>
 					</p>
 					<p class="list-group-item-text list-sub-items">
-						<span class="heading"><strong>Type : </strong></span><span>{{event[6]}}</span>
-						<span class="heading skill"><strong>Skill : </strong></span><span>{{event[7]}}</span>
+						<span class="heading"><strong>Type : </strong></span><span>{{scheduledEvent[6]}}</span>
+						<span class="heading skill"><strong>Skill : </strong></span><span>{{scheduledEvent[7]}}</span>
 					</p>
 					<p class="list-group-item-text list-sub-items">
-						<span>{{event[4]}} - {{event[5]}}</span>
+						<span>{{scheduledEvent[4]}} - {{scheduledEvent[5]}}</span>
 					</p> </a>
-					<div class="collapse item-details" id=item{{$parent.$index}}{{$index}}>
+					<div class="collapse item-details" id=item{{$index}}>
 						<div class="details">
 							<p class="list-group-item-text list-sub-items">
-								<span class="heading"><strong>Showup Loation : </strong></span><span>{{event[3]}}</span>
+								<span class="heading"><strong>Showup Loation : </strong></span><span>{{scheduledEvent[3]}}</span>
 							</p>
 							<p class="list-group-item-text list-sub-items">
 								<span class="heading"><strong>Coordinator : </strong></span><span></span>
 							</p>
 						</div>
 					</div>
-				</div>
-			</div>
+				</div>			
 		</div>
 
 	</div>
