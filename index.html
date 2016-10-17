@@ -9,13 +9,35 @@
 		<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
 	</head>
 	<body class="pre-login">
-
 		<div class="jumbotron pre-login">
 			<div class="container-fluid col-xs-12 col-sm-12">
 				<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
 				<div ng-view></div>
 			</div>
-		</div>
+		</div>	
+		<nav class="navbar navbar-default navbar-fixed-top hide">
+			<div class="container-fluid">
+				<div class="navbar-header col-xs-12 col-sm-12 col-lg-12">
+					<a class="btn-sm dropdown-toggle hand-cursor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="fa fa-bars menu"></span> </a>
+					<ul class="dropdown-menu menu-options">
+						<li>
+							<a href="#scheduledEventsCalendar">My Scheduled events</a>
+						</li>
+						<li>
+							<a href="#upcomingEventsCalendar">Upcoming Events</a>
+						</li>
+						<li>
+							<a href="#profilePage">My Profile</a>
+						</li>
+					</ul>
+					<a class="pull-right" href='#logout'>
+						<button class="btn btn-link signout">
+							<i class="fa fa-sign-out">Sign out</i>
+						</button> 
+					</a>
+				</div>
+			</div>
+		</nav>
 
 		<script src="app/bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="app/bower_components/angular/angular.js"></script>
@@ -30,16 +52,16 @@
 		<script src="app/bower_components/crypto-js/crypto-js.js"></script>
 		<script src="app/bower_components/crypto-js/md5.js"></script>
 
-		<script src="//code.angularjs.org/1.5.0/angular-cookies.js"></script>
-
 		<script src="app.js"></script>
 		<script src="app-services/authentication.service.js"></script>
 		<script src="app-services/events.service.js"></script>
+		<script src="app-services/userProfile.service.js"></script>
 		<script src="app-services/flash.service.js"></script>
 		<script src="eventsCalendar/scheduledEventsCalendar.controller.js"></script>
 		<script src="eventsCalendar/upcomingEventsCalendar.controller.js"></script>
 		<script src="profilePage/profilePage.controller.js"></script>
 		<script src="login/login.controller.js"></script>
+		<script src="login/logout.controller.js"></script>
 		<script src="register/register.controller.js"></script>
 	</body>
 </html>

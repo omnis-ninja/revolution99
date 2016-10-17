@@ -1,20 +1,38 @@
-﻿(function () {
-    'use strict';
+﻿(function() {
+	'use strict';
 
-    angular
-        .module('app')
-        .controller('ProfilePageController', ProfilePageController);
+	angular.module('app').controller('ProfilePageController', ProfilePageController);
 
-    ProfilePageController.$inject = ['$rootScope'];
-    function ProfilePageController($rootScope) {
-        var vm = this;
+	ProfilePageController.$inject = ['$rootScope', '$scope', 'UserprofileService'];
+	function ProfilePageController($rootScope, $scope, UserprofileService) {
+		var vm = this;
 
-        initController();
+		(function initController() {
+			GetPersonalDetails();
+		})();
 
-        function initController() {
+		function GetPersonalDetails() {
+			$scope.showUserProfile = false;
+			var data = {
+        		from_prev_call : $rootScope.for_next_call,
+        		uID : $rootScope.uID
+        	};
+			UserprofileService.GetPersonalDetails(data).then(function(response) {
+				if (response.data.errorMSG_user !== '') {
+					response = {
+						success : false,
+						message : 'Cannot fetch user details'
+					};
+					FlashService.Error(response.message);
+					vm.dataLoading = false;
+				} else {
+					$scope.showUserProfile = true;
+					console.log(response);
+					$scope.userProfile = response.data.userProfile;
+				}
+			});
+		}
 
-        }
-
-    }
+	}
 
 })();

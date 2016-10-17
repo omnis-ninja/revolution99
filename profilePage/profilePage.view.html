@@ -1,171 +1,88 @@
-﻿<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header col-xs-12 col-sm-12 col-lg-12">
-      <a class="btn-sm dropdown-toggle hand-cursor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		<span class="fa fa-bars menu"></span>
-	  </a>
-	  <ul class="dropdown-menu menu-options">
-	    <li><a href="#scheduledEventsCalendar">My Scheduled events</a></li>
-	    <li><a href="#upcomingEventsCalendar">Upcoming Events</a></li>
-	    <li><a href="#profilePage">My Profile</a></li>
-	  </ul>
-      <a class="pull-right" href='#login'>
-        <button class="btn btn-link signout"><i class="fa fa-sign-out">Sign out</i></button>
-      </a>
-    </div>
-  </div>
-</nav>
-<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-offset-3 col-lg-6">
-	<div class="col-xs-12 col-md-12 profile-container">		
+﻿<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-offset-3 col-lg-6">
+	<div class="text-center" ng-show="!showUserProfile">
+		<img src="img/ajax-loader.gif">
+	</div>
+	<div class="col-xs-12 col-md-12 profile-container" ng-show="showUserProfile">		
 		<form>
 			
 			<div class="row">
-				<h2 class="text-center">John Treehouse</h2>
+				<h2 class="text-center"><span>{{userProfile.oFirstName}}</span> <span style="padding-left:5px">{{userProfile.oLastName}}</span></h2>
 			</div>
-			<legend class="text-center sub-text">
-				Sergeant
-			</legend>
 			<div class="form-group">
 				<label for="lastName" class="control-label">Last Name</label>
-				<input type="text" class="form-control input-lg" id="lastName" placeholder="Last name">
+				<input type="text" class="form-control input-lg" id="lastName" placeholder="Last name" value="{{userProfile.oFirstName}}">
 			</div>
 			<div class="form-group">
 				<label for="firstName" class="control-label">First name</label>
-				<input type="text" class="form-control input-lg" id="firstname" placeholder="First name">
+				<input type="text" class="form-control input-lg" id="firstname" placeholder="First name" value="{{userProfile.oLastName}}">
 			</div>
 			<div class="form-group">
 				<label for="email" class="control-label">Email</label>
-				<input type="text" class="form-control input-lg" id="email" placeholder="Email">
+				<input type="text" class="form-control input-lg" id="email" placeholder="Email" value="{{userProfile.oEmail}}">
 			</div>
 			<div class="border"></div>
 			<div class="form-group row">
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="callsign" class="control-label">Call Sign</label>
-					<input type="text" class="form-control input-lg" id="callsign" placeholder="Call Sign">
+					<input type="text" class="form-control input-lg" id="callsign" placeholder="Call Sign" value="{{userProfile.ocallSign}}">
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="locationCode" class="control-label">Location Code</label>
-					<input type="text" class="form-control input-lg" id="locationCode" placeholder="Location Code">
+					<input type="text" class="form-control input-lg" id="locationCode" placeholder="Location Code" value="{{userProfile.oLocCode}}">
 				</div>
 			</div>
 			<div class="form-group row">
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="employeeNo" class="control-label">Employee Number</label>
-					<input type="text" class="form-control input-lg" id="employeeNo" placeholder="Employee Number">
+					<input type="text" class="form-control input-lg" id="employeeNo" placeholder="Employee Number" value="{{userProfile.oEmpNum}}">
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="password" class="control-label">Password</label>
-					<input type="password" class="form-control input-lg" id="password" placeholder="Password">
+					<input type="password" class="form-control input-lg" id="password" placeholder="Password" value="{{userProfile.oPassword}}">
 				</div>
 			</div>
 			<div class="border"></div>
 			<div class="form-group row">
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="handtalkie" class="control-label">Hand Talkie</label>
-					<input type="text" class="form-control input-lg" id="handtalkie" placeholder="Hand Talkie">
+					<input type="text" class="form-control input-lg" id="handtalkie" placeholder="Hand Talkie" value="{{userProfile.oHandTalkie}}">
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="homePhone" class="control-label">Home Phone</label>
-					<input type="text" class="form-control input-lg" id="homePhone" placeholder="Home Phone">
+					<input type="text" class="form-control input-lg" id="homePhone" placeholder="Home Phone" value="{{userProfile.oHomePhone}}">
 				</div>
 			</div>
 			<div class="form-group row">
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="workPhone" class="control-label">Work Phone</label>
-					<input type="text" class="form-control input-lg" id="workPhone" placeholder="Work Phone">
+					<input type="text" class="form-control input-lg" id="workPhone" placeholder="Work Phone" value="{{userProfile.oWorkPhone}}">
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="cellPhone" class="control-label">Cell Phone</label>
-					<input type="text" class="form-control input-lg" id="cellPhone" placeholder="Cell Phone">
+					<input type="text" class="form-control input-lg" id="cellPhone" placeholder="Cell Phone" value="{{userProfile.oCellPhone}}">
 				</div>
 			</div>
-			<div class="border"></div>
-			<div class="form-group row">
+			
+			<div class="form-group row" style='margin-top:20px;'>
 				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Officer" value="Officer">
-						Officer </label>
-				</div>
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Mounted" value="Mounted">
-						Mounted </label>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Corporal" value="Corporal">
-						Corporal / Det </label>
+					<legend>Skill:</legend>
+					<div ng-repeat="skill in userProfile.oSkill track by $index">
+						<label class="checkbox-inline">
+							<input type="checkbox" checked={{skill[2]}}>
+							{{skill[1]}} 
+						</label>
+					</div>
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Motorcycle" value="Motorcycle">
-						Motorcycle </label>
+					<legend>Type:</legend>
+					<div ng-repeat="type in userProfile.oType track by $index">
+						<label class="checkbox-inline">
+							<input type="checkbox" checked={{type[2]}}>
+							{{type[1]}} 
+						</label>
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Sergeant" value="Sergeant">
-						Sergeant </label>
-				</div>
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="PWC" value="PWC">
-						PWC </label>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Dispatcher" value="Dispatcher">
-						Dispatcher </label>
-				</div>
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Watercraft" value="Watercraft">
-						Watercraft </label>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Cadet" value="Cadet">
-						Cadet </label>
-				</div>
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="ATV" value="ATV">
-						ATV </label>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="NotUsed" value="NotUsed">
-						Not Used </label>
-				</div>
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Patrol" value="Patrol">
-						Patrol Vehicle </label>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-sm-6 col-lg-6 col-md-6">
-					<label class="checkbox-inline">
-						<input type="checkbox" id="Bike" value="Bike">
-						Bike patrol </label>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10 col-lg-12 col-lg-offset-0">
-					<button type="submit" class="btn btn-lg btn-success btn-block">
-						Update
-					</button>
-				</div>
-			</div>
+			</div>		
 		</form>
 	</div>
 </div>

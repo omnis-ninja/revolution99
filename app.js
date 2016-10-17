@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', 'DigestAuthInterceptor'])
+        .module('app', ['ngRoute', 'LocalStorageModule', 'DigestAuthInterceptor'])
         .config(config)
         .run(run);
 
@@ -18,6 +18,12 @@
 
             .when('/login', {
                 controller: 'LoginController',
+                templateUrl: 'login/login.view.html',
+                controllerAs: 'vm'
+            })
+            
+            .when('/logout', {
+                controller: 'LogoutController',
                 templateUrl: 'login/login.view.html',
                 controllerAs: 'vm'
             })
@@ -61,19 +67,20 @@
             .otherwise({ redirectTo: '/login' });
     }
 
-    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
-    function run($rootScope, $location, $cookieStore, $http) {
+    run.$inject = ['$rootScope', '$location', '$http'];
+    function run($rootScope, $location, $http) {
         // keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
-        if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-        }
+        //$rootScope.globals = $cookieStore.get('globals') || {};
+        //if ($rootScope.globals.currentUser) {
+            //$http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        //}
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/login', '/scheduledEventsCalendar','/upcomingEventsCalendar', '/forgotPassword','/forgotPasswordSuccess','/profilePage']) === -1;
-            var loggedIn = $rootScope.globals.currentUser;
-            if (restrictedPage && !loggedIn) {
+            var restrictedPage = $.inArray($location.path(), ['/login', '/logout', '/scheduledEventsCalendar','/upcomingEventsCalendar', '/forgotPassword','/forgotPasswordSuccess','/profilePage']) === -1;
+            //var loggedIn = $rootScope.globals.currentUser;
+            $rootScope.isSuccesfullyLoggedin = false;
+            if (restrictedPage && !$rootScope.isSuccesfullyLoggedin) {
                 $location.path('/login');
             }
         });

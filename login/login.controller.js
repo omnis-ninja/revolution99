@@ -47,6 +47,8 @@
 						$rootScope.for_next_call = response.data.for_next_call;
 						$rootScope.uID = response.data.uID;
 						$location.path('/upcomingEventsCalendar');
+						$rootScope.isSuccesfullyLoggedin = true;
+						$('.navbar-default').removeClass('hide');
 					}                    
                 });
 	        });
@@ -67,6 +69,7 @@
                 }
             });
         };
+
     }
 
 })();

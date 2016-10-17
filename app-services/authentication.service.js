@@ -3,12 +3,13 @@
 
     angular.module('app').factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', 'localStorageService'];
-    function AuthenticationService($http, $cookieStore, $rootScope, localStorageService) {
+    AuthenticationService.$inject = ['$http', '$rootScope', 'localStorageService'];
+    function AuthenticationService($http, $rootScope, localStorageService) {
         var service = {};
 		
 		service.GetAccessToken = GetAccessToken;
         service.Login = Login;
+        service.Logout = Logout;
         service.ForgotPassword = ForgotPassword;
         service.ClearCredentials = ClearCredentials;
         getConfigDetails();
@@ -37,6 +38,19 @@
 				headers: { 'Content-Type': 'application/json' }
             });
         }
+        
+        /*
+		 * Logout the user
+		 */
+        function Logout(data) {
+            return $http({
+                method: 'POST',
+                url: $rootScope.configData.webApi + 'SignoutUser',
+				data : JSON.stringify(data),
+				cache:false,
+				headers: { 'Content-Type': 'application/json' }
+            });
+        }
 		
 		/*
 		 * Forgot password functionality
@@ -61,7 +75,6 @@
 		 */
         function ClearCredentials() {
             $rootScope.globals = {};
-            $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
         }
         
