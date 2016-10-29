@@ -50,24 +50,47 @@
 						$rootScope.isSuccesfullyLoggedin = true;
 						$('.navbar-default').removeClass('hide');
 					}                    
-                });
+                },function error(errorResponse) {
+                	$location.path('/login');
+		        	FlashService.Error($rootScope.configData.errorMessage);
+		        });
+	        }, function error(errorResponse) {
+	        	$location.path('/login');
+	        	FlashService.Error($rootScope.configData.errorMessage);
 	        });
         };
 
 		/*
 		 * Forgot password functionality
 		 */
-        function forgotPassword() {
+        function forgotPassword(data) {
             vm.dataLoading = true;
-            AuthenticationService.ForgotPassword(vm.badgeNumber, vm.email, function (response) {
-                if (response.success) {
-                    $location.path('/forgotPasswordSuccess');
-                } else {
-                    $location.path('/forgotPasswordSuccess');
-                    FlashService.Error(response.message);
-                    vm.dataLoading = false;
-                }
-            });
+            AuthenticationService.GetAccessToken().then(function successCallback(response) {
+            	$rootScope.for_next_call = response.data.for_next_call;
+            	$rootScope.next_code = response.data.next_code;
+            	$rootScope.next_resp = response.data.next_resp;
+
+            	var credentials = {
+            		from_prev_call : $rootScope.for_next_call,
+            		uName : vm.badgeNumber,
+            		uEmail : vm.email
+            	};
+            	AuthenticationService.ForgotPassword(credentials).then(function (response) {
+					if(response.data.errorMSG_internal !== 'DEFAULT_OK') {
+						response = {
+							success: false,
+							message: response.data.errorMSG_user
+						};
+						FlashService.Error(response.message);
+						vm.dataLoading = false;
+					} else {
+						$location.path('/forgotPasswordSuccess');
+					}                    
+                }, function error(errorResponse) {
+		        	FlashService.Error($rootScope.configData.errorMessage);
+		        	$location.path('/login');
+		        });
+	        });
         };
 
     }

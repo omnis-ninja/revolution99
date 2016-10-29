@@ -3,63 +3,64 @@
 		<img src="img/ajax-loader.gif">
 	</div>
 	<div class="col-xs-12 col-md-12 profile-container" ng-show="showUserProfile">		
-		<form>
+		<form ng-submit="vm.UpdateProfile(userProfile)" role="form">
 			
 			<div class="row">
 				<h2 class="text-center"><span>{{userProfile.oFirstName}}</span> <span style="padding-left:5px">{{userProfile.oLastName}}</span></h2>
 			</div>
+			<div class="border"></div>
 			<div class="form-group">
 				<label for="lastName" class="control-label">Last Name</label>
-				<input type="text" class="form-control input-lg" id="lastName" placeholder="Last name" value="{{userProfile.oFirstName}}">
+				<input type="text" class="form-control input-lg" ng-model="userProfile.oFirstName" placeholder="Last name" value="{{userProfile.oFirstName}}">
 			</div>
 			<div class="form-group">
 				<label for="firstName" class="control-label">First name</label>
-				<input type="text" class="form-control input-lg" id="firstname" placeholder="First name" value="{{userProfile.oLastName}}">
+				<input type="text" class="form-control input-lg" ng-model="userProfile.oLastName" placeholder="First name" value="{{userProfile.oLastName}}">
 			</div>
 			<div class="form-group">
 				<label for="email" class="control-label">Email</label>
-				<input type="text" class="form-control input-lg" id="email" placeholder="Email" value="{{userProfile.oEmail}}">
+				<input type="text" class="form-control input-lg" ng-model="userProfile.oEmail" placeholder="Email" value="{{userProfile.oEmail}}">
 			</div>
 			<div class="border"></div>
 			<div class="form-group row">
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="callsign" class="control-label">Call Sign</label>
-					<input type="text" class="form-control input-lg" id="callsign" placeholder="Call Sign" value="{{userProfile.ocallSign}}">
+					<input type="text" class="form-control input-lg" ng-model="userProfile.oCallSign" placeholder="Call Sign" value="{{userProfile.oCallSign}}">
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="locationCode" class="control-label">Location Code</label>
-					<input type="text" class="form-control input-lg" id="locationCode" placeholder="Location Code" value="{{userProfile.oLocCode}}">
+					<input type="text" class="form-control input-lg" ng-model="userProfile.oLocCode" placeholder="Location Code" value="{{userProfile.oLocCode}}">
 				</div>
 			</div>
 			<div class="form-group row">
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="employeeNo" class="control-label">Employee Number</label>
-					<input type="text" class="form-control input-lg" id="employeeNo" placeholder="Employee Number" value="{{userProfile.oEmpNum}}">
+					<input type="text" class="form-control input-lg" ng-model="userProfile.oEmpNum" placeholder="Employee Number" value="{{userProfile.oEmpNum}}">
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="password" class="control-label">Password</label>
-					<input type="password" class="form-control input-lg" id="password" placeholder="Password" value="{{userProfile.oPassword}}">
+					<input type="password" class="form-control input-lg" ng-model="userProfile.oPassword" placeholder="Password" value="{{userProfile.oPassword}}">
 				</div>
 			</div>
 			<div class="border"></div>
 			<div class="form-group row">
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="handtalkie" class="control-label">Hand Talkie</label>
-					<input type="text" class="form-control input-lg" id="handtalkie" placeholder="Hand Talkie" value="{{userProfile.oHandTalkie}}">
+					<input type="text" class="form-control input-lg" ng-model="userProfile.oHandTalkie" placeholder="Hand Talkie" value="{{userProfile.oHandTalkie}}">
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="homePhone" class="control-label">Home Phone</label>
-					<input type="text" class="form-control input-lg" id="homePhone" placeholder="Home Phone" value="{{userProfile.oHomePhone}}">
+					<input type="text" class="form-control input-lg" ng-model="userProfile.oHomePhone" placeholder="Home Phone" value="{{userProfile.oHomePhone}}">
 				</div>
 			</div>
 			<div class="form-group row">
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="workPhone" class="control-label">Work Phone</label>
-					<input type="text" class="form-control input-lg" id="workPhone" placeholder="Work Phone" value="{{userProfile.oWorkPhone}}">
+					<input type="text" class="form-control input-lg" ng-model="userProfile.oWorkPhone" placeholder="Work Phone" value="{{userProfile.oWorkPhone}}">
 				</div>
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<label for="cellPhone" class="control-label">Cell Phone</label>
-					<input type="text" class="form-control input-lg" id="cellPhone" placeholder="Cell Phone" value="{{userProfile.oCellPhone}}">
+					<input type="text" class="form-control input-lg" ng-model="userProfile.oCellPhone" placeholder="Cell Phone" value="{{userProfile.oCellPhone}}">
 				</div>
 			</div>
 			
@@ -68,7 +69,7 @@
 					<legend>Skill:</legend>
 					<div ng-repeat="skill in userProfile.oSkill track by $index">
 						<label class="checkbox-inline">
-							<input type="checkbox" checked={{skill[2]}}>
+							<input type="checkbox" ng-model="skill[2]" checked={{skill[2]}}>
 							{{skill[1]}} 
 						</label>
 					</div>
@@ -77,12 +78,20 @@
 					<legend>Type:</legend>
 					<div ng-repeat="type in userProfile.oType track by $index">
 						<label class="checkbox-inline">
-							<input type="checkbox" checked={{type[2]}}>
+							<input type="checkbox" ng-model="type[2]" checked={{type[2]}}>
 							{{type[1]}} 
 						</label>
 					</div>
 				</div>
-			</div>		
+			</div>
+			
+			<div class="form-group">		
+ 				<div class="col-sm-offset-2 col-sm-10 col-lg-12 col-lg-offset-0">		
+ 					<button type="submit" class="btn btn-lg btn-success btn-block">		
+ 						Update		
+ 					</button>		
+  				</div>		  				
+  			</div>	
 		</form>
 	</div>
 </div>

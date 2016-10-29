@@ -40,6 +40,7 @@
                 type: 'success',
                 keepAfterLocationChange: keepAfterLocationChange
             };
+            $('#alertModal').modal('show');
         }
 
         function Error(message, keepAfterLocationChange) {
@@ -48,6 +49,7 @@
                 type: 'error',
                 keepAfterLocationChange: keepAfterLocationChange
             };
+            $('#alertModal').modal('show');
         }
     }
 

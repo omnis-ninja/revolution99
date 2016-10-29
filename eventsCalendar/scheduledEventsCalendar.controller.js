@@ -1,42 +1,42 @@
-﻿(function () {
-    'use strict';
+﻿(function() {
+	'use strict';
 
-    angular
-        .module('app')
-        .controller('ScheduledEventsCalendarController', ScheduledEventsCalendarController);
+	angular.module('app').controller('ScheduledEventsCalendarController', ScheduledEventsCalendarController);
 
-    ScheduledEventsCalendarController.$inject = ['$rootScope', 'EventsService', '$scope', 'FlashService'];
-    function ScheduledEventsCalendarController($rootScope, EventsService, $scope, FlashService) {
-        var vm = this;
-		
+	ScheduledEventsCalendarController.$inject = ['$rootScope', 'EventsService', '$scope', 'FlashService'];
+	function ScheduledEventsCalendarController($rootScope, EventsService, $scope, FlashService) {
+		var vm = this;
+
 		(function initController() {
-            GetAllEvents();
-        })();
+			GetAllEvents();
+		})();
 
-        function GetAllEvents() {
-        	$scope.scheduledEvents = [];
-        	var eventDetails = {
-        		cDate : '01/04/2016',
-        		from_prev_call : $rootScope.for_next_call,
-        		uID : $rootScope.uID
-        	};
-        	EventsService.GetAllEvents(eventDetails).then(function (response) {
-					if(response.data.errorMSG_user !== '') {
-						response = {
-						success: false,
-						message: 'Cannot fetch event details'
-						};
-						FlashService.Error(response.message);
+		function GetAllEvents() {
+			var eventDetails = {
+				cDate : '01/04/2016',
+				from_prev_call : $rootScope.for_next_call,
+				uID : $rootScope.uID
+			};
+			if (!$rootScope.subscribedToEvent) {
+				$scope.scheduledEvents = $rootScope.scheduledEvents;
+				$scope.showScheduledEvents = $rootScope.scheduledEvents[1].length > 0;
+			} else {
+				EventsService.GetAllEvents(eventDetails).then(function(response) {
+					if (response.data.errorMSG_internal !== 'DEFAULT_OK') {
+						FlashService.Error(response.data.errorMSG_user);
 						vm.dataLoading = false;
 					} else {
 						$rootScope.for_next_call = response.data.for_next_call;
 						$rootScope.uID = response.data.uID;
-						$scope.scheduledEvents = (response.data.month_events_list[3]);
-						$scope.showScheduledEvents = $scope.scheduledEvents[1].length > 0;	
-					}                    
-                });
-        }
+						$rootScope.scheduledEvents = (response.data.month_events_list[3]);
+						$scope.showScheduledEvents = $scope.scheduledEvents[1].length > 0;
+					}
+				}, function error(errorResponse) {
+					FlashService.Error($rootScope.configData.errorMessage);
+				});
+			}
+		}
 
-    }
+	}
 
 })();

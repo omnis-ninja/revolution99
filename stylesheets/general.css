@@ -7,52 +7,61 @@ body .jumbotron {
   background-color: #e9f1f4;
   padding-top: 0;
 }
-/* line 7, ../sass/general.scss */
+/* line 6, ../sass/general.scss */
+body .jumbotron .alert {
+  width: 50%;
+  margin: 20% auto;
+}
+/* line 11, ../sass/general.scss */
+body .jumbotron #alertModal .close {
+  margin-top: 13px;
+}
+/* line 16, ../sass/general.scss */
 body .container-fluid {
   padding: 0;
 }
 
-/* line 11, ../sass/general.scss */
+/* line 20, ../sass/general.scss */
 .hand-cursor {
   cursor: pointer;
 }
 
-/* line 14, ../sass/general.scss */
+/* line 23, ../sass/general.scss */
 .navbar-default {
   background-color: #3f9ac3;
   height: 60px;
 }
-/* line 17, ../sass/general.scss */
+/* line 26, ../sass/general.scss */
 .navbar-default .menu {
   font-size: 25px;
   color: #fff;
   line-height: 58px;
 }
-/* line 22, ../sass/general.scss */
+/* line 31, ../sass/general.scss */
 .navbar-default .menu-options {
   left: 20px;
 }
-/* line 24, ../sass/general.scss */
+/* line 33, ../sass/general.scss */
 .navbar-default .menu-options a {
   line-height: 35px;
 }
 
-/* line 29, ../sass/general.scss */
+/* line 38, ../sass/general.scss */
 .margin10-right {
   margin-right: 10px;
 }
 
-/* line 32, ../sass/general.scss */
+/* line 41, ../sass/general.scss */
 .margin20-top {
   margin-top: 20px;
 }
 
-/* line 35, ../sass/general.scss */
+/* line 44, ../sass/general.scss */
 .login-container, .profile-container {
   font-weight: 100;
   margin: 15% auto;
 }
-/* line 38, ../sass/general.scss */
+/* line 47, ../sass/general.scss */
 .login-container .input-controls, .profile-container .input-controls {
   height: 55px;
   padding: 0 14px;
@@ -67,11 +76,11 @@ body .container-fluid {
   word-break: normal;
   white-space: nowrap;
 }
-/* line 52, ../sass/general.scss */
+/* line 61, ../sass/general.scss */
 .login-container .login-caption, .profile-container .login-caption {
   color: #777 !important;
 }
-/* line 55, ../sass/general.scss */
+/* line 64, ../sass/general.scss */
 .login-container .forgot-password, .profile-container .forgot-password {
   margin-top: 20px;
   font-size: 20px;
@@ -79,7 +88,7 @@ body .container-fluid {
 }
 
 /*Events calendar*/
-/* line 66, ../sass/general.scss */
+/* line 75, ../sass/general.scss */
 .events-calendar-heading {
   font-size: 20px;
   font-weight: bold;
@@ -87,75 +96,75 @@ body .container-fluid {
   margin-top: 85px;
 }
 
-/* line 72, ../sass/general.scss */
+/* line 81, ../sass/general.scss */
 .border-bottom {
   padding: 15px 0 0 0;
   border-bottom: 1px solid #ddd;
 }
 
-/* line 76, ../sass/general.scss */
+/* line 85, ../sass/general.scss */
 .clear {
   clear: both;
 }
 
-/* line 79, ../sass/general.scss */
+/* line 88, ../sass/general.scss */
 .profile {
   color: #bbb;
   font-size: 30px;
 }
 
-/* line 84, ../sass/general.scss */
+/* line 93, ../sass/general.scss */
 .jumbotron .list-sub-items {
   margin-bottom: 0;
   font-size: 14px;
   letter-spacing: .1em;
 }
-/* line 88, ../sass/general.scss */
+/* line 97, ../sass/general.scss */
 .jumbotron .list-sub-items .heading {
   text-transform: uppercase;
   font-size: 11px;
   color: #888;
 }
 
-/* line 97, ../sass/general.scss */
+/* line 106, ../sass/general.scss */
 .events-calendar-container {
   padding: 0 30px;
 }
-/* line 99, ../sass/general.scss */
+/* line 108, ../sass/general.scss */
 .events-calendar-container .co-ordinator {
   margin: 30px 0 10px 0;
 }
-/* line 102, ../sass/general.scss */
+/* line 111, ../sass/general.scss */
 .events-calendar-container a.list-group-item {
   margin-bottom: 1px;
   color: #999;
   cursor: pointer;
   padding: 10px;
 }
-/* line 107, ../sass/general.scss */
+/* line 116, ../sass/general.scss */
 .events-calendar-container a.list-group-item p {
   margin-bottom: 2px;
   line-height: 18px;
 }
-/* line 112, ../sass/general.scss */
+/* line 121, ../sass/general.scss */
 .events-calendar-container .pending-item {
   border-left: 5px solid #fb0c05;
 }
-/* line 114, ../sass/general.scss */
+/* line 123, ../sass/general.scss */
 .events-calendar-container .pending-item .label {
   font-size: 12px;
   letter-spacing: .1em;
   background-color: #fb0c05;
 }
-/* line 120, ../sass/general.scss */
+/* line 129, ../sass/general.scss */
 .events-calendar-container .normal-item {
   border-left: 5px solid #c2b9b9;
 }
-/* line 123, ../sass/general.scss */
+/* line 132, ../sass/general.scss */
 .events-calendar-container .list-sub-items {
   color: #b2abab;
 }
-/* line 126, ../sass/general.scss */
+/* line 135, ../sass/general.scss */
 .events-calendar-container .add-event {
   padding: 0;
   font-size: 12px;
@@ -166,22 +175,22 @@ body .container-fluid {
   text-align: center;
   margin-top: 13px;
 }
-/* line 136, ../sass/general.scss */
+/* line 145, ../sass/general.scss */
 .events-calendar-container .list-group-item-heading {
   color: #333;
   font-size: 18px;
   letter-spacing: 0.1em;
   line-height: 30px;
 }
-/* line 142, ../sass/general.scss */
+/* line 151, ../sass/general.scss */
 .events-calendar-container .skill {
   margin-left: 10px;
 }
-/* line 145, ../sass/general.scss */
+/* line 154, ../sass/general.scss */
 .events-calendar-container .events-label {
   line-height: 60px;
 }
-/* line 148, ../sass/general.scss */
+/* line 157, ../sass/general.scss */
 .events-calendar-container .item-details {
   border-right: 1px solid #c8c8c8;
   border-left: 1px solid #c8c8c8;
@@ -189,18 +198,18 @@ body .container-fluid {
   background-color: #fff;
   margin: -3px 0 10px 0;
 }
-/* line 154, ../sass/general.scss */
+/* line 163, ../sass/general.scss */
 .events-calendar-container .item-details .details {
   padding: 10px;
 }
 
-/* line 159, ../sass/general.scss */
+/* line 168, ../sass/general.scss */
 .border {
   border-bottom: 1px solid #ddd;
   margin: 40px 0;
 }
 
-/* line 163, ../sass/general.scss */
+/* line 172, ../sass/general.scss */
 .btn-link.signout {
   color: #fff;
   font-size: 20px;
@@ -208,11 +217,11 @@ body .container-fluid {
   margin-right: 4px;
 }
 
-/* line 170, ../sass/general.scss */
+/* line 179, ../sass/general.scss */
 .profile-container {
   margin: 85px auto;
 }
-/* line 172, ../sass/general.scss */
+/* line 181, ../sass/general.scss */
 .profile-container .image-container {
   background-color: #f9fafb;
   text-align: center;
@@ -225,25 +234,25 @@ body .container-fluid {
   border-radius: 50%;
   margin: 0 auto;
 }
-/* line 183, ../sass/general.scss */
+/* line 192, ../sass/general.scss */
 .profile-container .image-container img {
   height: 100%;
   max-width: 100%;
   width: auto;
 }
-/* line 189, ../sass/general.scss */
+/* line 198, ../sass/general.scss */
 .profile-container .sub-text {
   color: #aaa;
   font-size: 18px;
 }
-/* line 193, ../sass/general.scss */
+/* line 202, ../sass/general.scss */
 .profile-container label {
   font-weight: normal;
   font-size: 20px;
   color: #7f7979;
   line-height: 25px;
 }
-/* line 199, ../sass/general.scss */
+/* line 208, ../sass/general.scss */
 .profile-container h2 {
   color: #7f7979;
 }

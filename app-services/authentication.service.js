@@ -55,18 +55,13 @@
 		/*
 		 * Forgot password functionality
 		 */
-        function ForgotPassword(badgeNumber, email, callback) {
-            $http({
+        function ForgotPassword(data) {
+            return $http({
                 method: 'POST',
-                url: '/api/forgotPassword'
-            }).then(function successCallback(response) {
-                callback(response);
-            }, function errorCallback(response) {
-                response = {
-                    success: false,
-                    message: 'There is a problem resetting your password.Please contact support'
-                };
-                callback(response);
+                url: $rootScope.configData.webApi + 'changePassword',
+                data : JSON.stringify(data),
+				cache:false,
+				headers: { 'Content-Type': 'application/json' }
             });
         };
 		
