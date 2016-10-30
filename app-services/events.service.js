@@ -3,9 +3,9 @@
 
 	angular.module('app').factory('EventsService', EventsService);
 
-	EventsService.$inject = ['$http', '$rootScope', 'localStorageService'];
+	EventsService.$inject = ['$http', '$rootScope'];
 
-	function EventsService($http, $rootScope, localStorageService) {
+	function EventsService($http, $rootScope) {
 		var service = {};
 		service.GetAllEvents = GetAllEvents;
 		service.SubscribeToEvent = SubscribeToEvent;

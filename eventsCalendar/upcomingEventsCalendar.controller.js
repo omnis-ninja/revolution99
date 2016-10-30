@@ -3,11 +3,12 @@
 
 	angular.module('app').controller('UpcomingEventsCalendarController', UpcomingEventsCalendarController);
 
-	UpcomingEventsCalendarController.$inject = ['$rootScope', 'EventsService', '$scope', 'FlashService'];
-	function UpcomingEventsCalendarController($rootScope, EventsService, $scope, FlashService) {
+	UpcomingEventsCalendarController.$inject = ['$rootScope', 'EventsService', '$scope', 'FlashService', 'EventsJSONMapping'];
+	function UpcomingEventsCalendarController($rootScope, EventsService, $scope, FlashService, EventsJSONMapping) {
 		var vm = this;
 
 		vm.SubscribeToEvent = SubscribeToEvent;
+		vm.EventsJSONMapping = EventsJSONMapping;
 
 		(function initController() {
 			$rootScope.subscribedToEvent = false;

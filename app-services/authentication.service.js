@@ -3,8 +3,8 @@
 
     angular.module('app').factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$rootScope', 'localStorageService'];
-    function AuthenticationService($http, $rootScope, localStorageService) {
+    AuthenticationService.$inject = ['$http', '$rootScope'];
+    function AuthenticationService($http, $rootScope) {
         var service = {};
 		
 		service.GetAccessToken = GetAccessToken;

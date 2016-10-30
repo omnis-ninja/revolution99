@@ -1,11 +1,10 @@
 ﻿(function() {
 	'use strict';
 
-	angular.module('app', ['ngRoute', 'LocalStorageModule', 'DigestAuthInterceptor']).config(config).run(run);
+	angular.module('app', ['ngRoute']).config(config).run(run);
 
 	config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
 	function config($routeProvider, $locationProvider, $httpProvider) {
-		$httpProvider.interceptors.push('digestAuthInterceptor');
 		$routeProvider.when('/', {
 			controller : 'HomeController',
 			templateUrl : 'home/home.view.html',

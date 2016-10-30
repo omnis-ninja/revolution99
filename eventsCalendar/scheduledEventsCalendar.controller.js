@@ -3,9 +3,10 @@
 
 	angular.module('app').controller('ScheduledEventsCalendarController', ScheduledEventsCalendarController);
 
-	ScheduledEventsCalendarController.$inject = ['$rootScope', 'EventsService', '$scope', 'FlashService'];
-	function ScheduledEventsCalendarController($rootScope, EventsService, $scope, FlashService) {
+	ScheduledEventsCalendarController.$inject = ['$rootScope', 'EventsService', '$scope', 'FlashService', 'EventsJSONMapping'];
+	function ScheduledEventsCalendarController($rootScope, EventsService, $scope, FlashService, EventsJSONMapping) {
 		var vm = this;
+		vm.EventsJSONMapping = EventsJSONMapping;
 
 		(function initController() {
 			GetAllEvents();

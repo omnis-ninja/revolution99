@@ -30,23 +30,23 @@
 					<div class="list-group">
 						<a class="list-group-item normal-item" data-toggle="collapse" data-target=#item{{$parent.$index}}{{$index}}>
 						<p>
-							<span class="list-group-item-heading">{{event[2]}}</span>
+							<span class="list-group-item-heading">{{event[vm.EventsJSONMapping.NAME]}}</span>
 							<span class="pull-right">
 								<button class="btn btn-sm btn-success add-event" ng-click="$parent.$parent.vm.SubscribeToEvent(event, $event)">
 									<i class="fa fa-plus"></i>
 								</button></span>
 						</p>
 						<p class="list-group-item-text list-sub-items">
-							<span class="heading"><strong>Type : </strong></span><span>{{event[6]}}</span>
-							<span class="heading skill"><strong>Skill : </strong></span><span>{{event[7]}}</span>
+							<span class="heading"><strong>Type : </strong></span><span>{{event[vm.EventsJSONMapping.TYPE]}}</span>
+							<span class="heading skill"><strong>Skill : </strong></span><span>{{event[vm.EventsJSONMapping.SKILL]}}</span>
 						</p>
 						<p class="list-group-item-text list-sub-items">
-							<span>{{event[4]}} - {{event[5]}}</span>
+							<span>{{event[vm.EventsJSONMapping.START_DATE_TIME]}} - {{event[vm.EventsJSONMapping.END_DATE_TIME]}}</span>
 						</p> </a>
 						<div class="collapse item-details" id=item{{$parent.$index}}{{$index}}>
 							<div class="details">
 								<p class="list-group-item-text list-sub-items">
-									<span class="heading"><strong>Showup Loation : </strong></span><span>{{event[3]}}</span>
+									<span class="heading"><strong>Showup Location : </strong></span><span>{{event[vm.EventsJSONMapping.LOCATION]}}</span>
 								</p>
 								<p class="list-group-item-text list-sub-items">
 									<span class="heading"><strong>Coordinator : </strong></span><span></span>

@@ -3,9 +3,9 @@
 
 	angular.module('app').factory('UserprofileService', UserprofileService);
 
-	UserprofileService.$inject = ['$http', '$rootScope', 'localStorageService'];
+	UserprofileService.$inject = ['$http', '$rootScope'];
 
-	function UserprofileService($http, $rootScope, localStorageService) {
+	function UserprofileService($http, $rootScope) {
 		var service = {};
 		service.GetPersonalDetails = GetPersonalDetails;
 		service.UpdateProfile = UpdateProfile;
