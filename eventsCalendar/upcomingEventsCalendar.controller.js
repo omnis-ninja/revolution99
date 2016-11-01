@@ -74,7 +74,6 @@
 				}
 			}, function error(errorResponse) {
 				FlashService.Error($rootScope.configData.errorMessage);
-				$location.path('/login');
 			});
 		}
 

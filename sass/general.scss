@@ -11,6 +11,9 @@
 	    .close{
 	      margin-top:13px;
 	    }
+	    &.modal{
+	      overflow-y:auto;
+	    }
 	  }
 	}
 	.container-fluid{

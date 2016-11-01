@@ -22,14 +22,12 @@
         		uID : $rootScope.uID
         	};
         	AuthenticationService.Logout(data).then(function (response) {
-                if (response.data.status !=200) {
-                	$rootScope.isSuccesfullyLoggedin = true;
-                	$('.navbar-default').addClass('hide');
-                    $location.path('/login');
-                } else {
-                    FlashService.Error(response.message);
-                    vm.dataLoading = false;
-                }
+        		if (response.data.errorMSG_internal !== 'DEFAULT_OK') {
+					FlashService.Error(response.data.errorMSG_user);
+				} else {
+					$('.navbar-default').addClass('hide');
+					$location.path('/login');
+				}
             });
         }
     }

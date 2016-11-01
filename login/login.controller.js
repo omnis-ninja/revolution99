@@ -51,10 +51,12 @@
 						$('.navbar-default').removeClass('hide');
 					}                    
                 },function error(errorResponse) {
+                	vm.dataLoading = false;
                 	$location.path('/login');
 		        	FlashService.Error($rootScope.configData.errorMessage);
 		        });
 	        }, function error(errorResponse) {
+	        	vm.dataLoading = false;
 	        	$location.path('/login');
 	        	FlashService.Error($rootScope.configData.errorMessage);
 	        });

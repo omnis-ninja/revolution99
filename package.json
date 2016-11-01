@@ -7,9 +7,6 @@
     "postinstall": "bower install"
   },
   "license": "MIT",
-  "dependencies": {
-    "angular-md5": "^0.1.10"
-  },
   "devDependencies": {
     "bower": "^1.7.7",
     "concurrently": "^2.0.0",

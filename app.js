@@ -60,8 +60,8 @@
 	function handleLoginFailure($location, $rootScope) {
 		var restrictedPage = $.inArray($location.path(), ['/login', '/forgotPassword', '/forgotPasswordSuccess']) === -1;
 		var loggedIn = $rootScope.isSuccesfullyLoggedin;
-		if (restrictedPage && !loggedIn) {
-			$('.navbar-default').removeClass('hide');
+		if ((restrictedPage && !loggedIn) || $location.path() === '/logout') {
+			$('.navbar-default').addClass('hide');
 			$location.path('/login');
 		}
 	}
