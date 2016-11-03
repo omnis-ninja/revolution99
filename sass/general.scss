@@ -1,4 +1,16 @@
-﻿body {
+﻿body.modal-open{
+  margin-right:0px;
+}
+.loading {
+  margin-top: 10%;
+}
+.margin10-right{
+  margin-right:10px;
+}
+.modal-open .navbar-fixed-top{
+  margin-right:0px;
+}
+body {
 	background-color: #e9f1f4;
 	.jumbotron{
 	  background-color: #e9f1f4;
