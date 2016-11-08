@@ -13,8 +13,9 @@
 		})();
 
 		function GetAllEvents() {
+			var cDate = moment().format('DD/MM/YYYY');
 			var eventDetails = {
-				cDate : '01/04/2016',
+				cDate : cDate,
 				from_prev_call : $rootScope.for_next_call,
 				uID : $rootScope.uID
 			};

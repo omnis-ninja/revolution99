@@ -24,6 +24,7 @@
             vm.dataLoading = true;
             var username = vm.username;
             var password = vm.password;
+			password = password.toUpperCase();
 			
             AuthenticationService.GetAccessToken().then(function successCallback(response) {
             	$rootScope.for_next_call = response.data.for_next_call;
