@@ -61,7 +61,8 @@
 					eStart_date_time : eventDetails[4],
 					eEnd_date_time : eventDetails[5],
 					oType : eventDetails[6],
-					oSkill : eventDetails[7]
+					oSkill : eventDetails[7],
+					eCoordinator : eventDetails[8]
 				}
 			};
 			EventsService.SubscribeToEvent(eventTosubscribe).then(function(response) {

@@ -14,7 +14,8 @@
 			START_DATE_TIME : 4,
 			END_DATE_TIME : 5,
 			TYPE : 6,
-			SKILL : 7
+			SKILL : 7,
+			COORDINATOR : 8
 		};
 	}
 
