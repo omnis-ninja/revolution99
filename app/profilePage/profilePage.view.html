@@ -68,7 +68,7 @@
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<legend>Skill:</legend>
 					<div ng-repeat="skill in userProfile.oSkill track by $index">
-						<label class="checkbox-inline">
+						<label class="checkbox-inline" ng-if="skill[1]">
 							<input type="checkbox" ng-model="skill[2]" checked={{skill[2]}}>
 							{{skill[1]}} 
 						</label>
@@ -77,7 +77,7 @@
 				<div class="col-sm-6 col-lg-6 col-md-6">
 					<legend>Type:</legend>
 					<div ng-repeat="type in userProfile.oType track by $index">
-						<label class="checkbox-inline">
+						<label class="checkbox-inline" ng-if="type[1]">
 							<input type="checkbox" ng-model="type[2]" checked={{type[2]}}>
 							{{type[1]}} 
 						</label>
