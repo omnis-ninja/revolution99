@@ -9,6 +9,7 @@
 		var service = {};
 		service.GetAllEvents = GetAllEvents;
 		service.SubscribeToEvent = SubscribeToEvent;
+		service.EmailSchedule = EmailSchedule;
 		getConfigDetails();
 
 		return service;
@@ -49,6 +50,20 @@
 				method : 'POST',
 				url : $rootScope.configData.webApi + 'subscribeUserToEvent',
 				data : JSON.stringify(eventDetails),
+				headers : {
+					'Content-Type' : 'application/json'
+				}
+			});
+		}
+		
+		/*
+		 * Email scheduled events
+		 */
+		function EmailSchedule(emailSchedule) {
+			return $http({
+				method : 'POST',
+				url : $rootScope.configData.webApi + 'getUserSubscribedEventsAndEmail',
+				data : JSON.stringify(emailSchedule),
 				headers : {
 					'Content-Type' : 'application/json'
 				}

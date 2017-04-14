@@ -40,7 +40,7 @@
 					if(response.data.errorMSG_user !== '') {
 						response = {
 						success: false,
-						message: 'Username or password is incorrect'
+						message: response.data.errorMSG_user
 						};
 						FlashService.Error(response.message);
 						vm.dataLoading = false;

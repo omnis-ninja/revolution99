@@ -7,6 +7,7 @@
 	function ScheduledEventsCalendarController($rootScope, EventsService, $scope, FlashService, EventsJSONMapping) {
 		var vm = this;
 		vm.EventsJSONMapping = EventsJSONMapping;
+		vm.EmailSchedule = EmailSchedule;
 
 		(function initController() {
 			GetAllEvents();
@@ -37,6 +38,26 @@
 					FlashService.Error($rootScope.configData.errorMessage);
 				});
 			}
+		}
+		
+		function EmailSchedule() {
+			console.log('email');
+			var emailSchedule = {
+				from_prev_call : $rootScope.for_next_call,
+				uID : $rootScope.uID
+			};
+			FlashService.Success('Emailing in progress ...');
+			EventsService.EmailSchedule(emailSchedule).then(function(response) {
+				if (response.data.errorMSG_internal !== 'DEFAULT_OK') {
+					FlashService.Error(response.data.errorMSG_user);
+				} else {
+					$rootScope.for_next_call = response.data.for_next_call;
+					$rootScope.uID = response.data.uID;
+					FlashService.Success(response.data.errorMSG_user);
+				}
+			}, function error(errorResponse) {
+				FlashService.Error($rootScope.configData.errorMessage);
+			});
 		}
 
 	}

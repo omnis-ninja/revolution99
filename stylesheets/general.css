@@ -156,7 +156,7 @@ body .container-fluid {
 }
 /* line 123, ../sass/general.scss */
 .events-calendar-container .co-ordinator {
-  margin: 30px 0 10px 0;
+  margin: 30px 0 10px 10px;
 }
 /* line 126, ../sass/general.scss */
 .events-calendar-container a.list-group-item {
