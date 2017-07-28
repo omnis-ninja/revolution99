@@ -20,9 +20,11 @@
 				method : 'POST',
 				url : $rootScope.configData.webApi + 'getUserProfile',
 				data : JSON.stringify(data),
-				headers : {
-					'Content-Type' : 'application/json'
-				}
+				headers: { 
+					'Content-Type': 'application/json',
+					'prev_code' : $rootScope.headers.next_code,
+					'prev_resp' : $rootScope.headers.next_resp
+					}
 			});
 		}
 
@@ -34,9 +36,11 @@
 				method : 'POST',
 				url : $rootScope.configData.webApi + 'setUserProfile',
 				data : JSON.stringify(userData),
-				headers : {
-					'Content-Type' : 'application/json'
-				}
+				headers: { 
+					'Content-Type': 'application/json',
+					'prev_code' : $rootScope.headers.next_code,
+					'prev_resp' : $rootScope.headers.next_resp
+					}
 			});
 		}
 

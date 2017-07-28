@@ -15,8 +15,8 @@
 		function GetPersonalDetails() {
 			$scope.showUserProfile = false;
 			var data = {
-        		from_prev_call : $rootScope.for_next_call,
-        		uID : $rootScope.uID
+        		from_prev_call : $rootScope.data.for_next_call,
+        		uuid : $rootScope.data.uuid
         	};
 			UserprofileService.GetPersonalDetails(data).then(function(response) {
 				if (response.data.errorMSG_user !== '') {
@@ -27,8 +27,8 @@
 					FlashService.Error(response.message);
 					vm.dataLoading = false;
 				} else {
-					$rootScope.for_next_call = response.data.for_next_call;
-					$rootScope.uID = response.data.uID;
+					$rootScope.headers = response.headers();
+					$rootScope.data = response.data;
 					$scope.showUserProfile = true;
 					$scope.userProfile = response.data.userProfile;
 				}
@@ -39,8 +39,8 @@
 		
 		function UpdateProfile(userProfile) {			
 			var userProfileData = {
-        		from_prev_call : $rootScope.for_next_call,
-        		uID : $rootScope.uID,
+        		from_prev_call : $rootScope.data.for_next_call,
+        		uuid : $rootScope.data.uuid,
         		userProfile : userProfile
         	};
 
@@ -49,8 +49,8 @@
 					FlashService.Error(response.data.errorMSG_user);
 					vm.dataLoading = false;
 				} else {
-					$rootScope.for_next_call = response.data.for_next_call;
-					$rootScope.uID = response.data.uID;
+					$rootScope.headers = response.headers();
+					$rootScope.data = response.data;
 					FlashService.Success(response.data.errorMSG_user !== '' ? response.data.errorMSG_user : 'user data updated successfully !!!');
 				}
 			}, function error(errorResponse) {

@@ -27,12 +27,12 @@
 			password = password.toUpperCase();
 			
             AuthenticationService.GetAccessToken().then(function successCallback(response) {
-            	$rootScope.for_next_call = response.data.for_next_call;
-            	$rootScope.next_code = response.data.next_code;
-            	$rootScope.next_resp = response.data.next_resp;
+				$rootScope.headers = response.headers();
+            	$rootScope.data = response.data;
 
             	var credentials = {
-            		from_prev_call : $rootScope.for_next_call,
+					uuid : $rootScope.data.uuid,
+            		from_prev_call : $rootScope.data.for_next_call,
             		uName : username,
             		uPass : password
             	};
@@ -40,13 +40,13 @@
 					if(response.data.errorMSG_user !== '') {
 						response = {
 						success: false,
-						message: response.data.errorMSG_user
+						message: 'Username or password is incorrect'
 						};
 						FlashService.Error(response.message);
 						vm.dataLoading = false;
 					} else {
-						$rootScope.for_next_call = response.data.for_next_call;
-						$rootScope.uID = response.data.uID;
+						$rootScope.headers = response.headers();
+						$rootScope.data = response.data;
 						$location.path('/upcomingEventsCalendar');
 						$rootScope.isSuccesfullyLoggedin = true;
 						$('.navbar-default').removeClass('hide');
@@ -69,12 +69,15 @@
         function forgotPassword(data) {
             vm.dataLoading = true;
             AuthenticationService.GetAccessToken().then(function successCallback(response) {
-            	$rootScope.for_next_call = response.data.for_next_call;
-            	$rootScope.next_code = response.data.next_code;
-            	$rootScope.next_resp = response.data.next_resp;
+//            	$rootScope.for_next_call = response.data.for_next_call;
+//            	$rootScope.next_code = response.data.next_code;
+//            	$rootScope.next_resp = response.data.next_resp;
+				$rootScope.headers = response.headers();
+            	$rootScope.data = response.data;
 
             	var credentials = {
-            		from_prev_call : $rootScope.for_next_call,
+					uuid : $rootScope.data.uuid,
+            		from_prev_call : $rootScope.data.for_next_call,
             		uName : vm.badgeNumber,
             		uEmail : vm.email
             	};

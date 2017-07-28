@@ -35,7 +35,11 @@
                 url: $rootScope.configData.webApi + 'authenticateUser',
 				data : JSON.stringify(credentials),
 				cache:false,
-				headers: { 'Content-Type': 'application/json' }
+				headers: { 
+					'Content-Type': 'application/json',
+					'prev_code' : $rootScope.headers.next_code,
+					'prev_resp' : $rootScope.headers.next_resp
+					}
             });
         }
         
@@ -48,7 +52,11 @@
                 url: $rootScope.configData.webApi + 'SignoutUser',
 				data : JSON.stringify(data),
 				cache:false,
-				headers: { 'Content-Type': 'application/json' }
+				headers: { 
+					'Content-Type': 'application/json',
+					'prev_code' : $rootScope.headers.next_code,
+					'prev_resp' : $rootScope.headers.next_resp
+					}
             });
         }
 		
@@ -61,7 +69,11 @@
                 url: $rootScope.configData.webApi + 'changePassword',
                 data : JSON.stringify(data),
 				cache:false,
-				headers: { 'Content-Type': 'application/json' }
+				headers: { 
+					'Content-Type': 'application/json',
+					'prev_code' : $rootScope.headers.next_code,
+					'prev_resp' : $rootScope.headers.next_resp
+					}
             });
         };
 		

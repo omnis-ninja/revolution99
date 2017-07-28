@@ -7,7 +7,6 @@
 	function ScheduledEventsCalendarController($rootScope, EventsService, $scope, FlashService, EventsJSONMapping) {
 		var vm = this;
 		vm.EventsJSONMapping = EventsJSONMapping;
-		vm.EmailSchedule = EmailSchedule;
 
 		(function initController() {
 			GetAllEvents();
@@ -17,8 +16,8 @@
 			var cDate = moment().format('DD/MM/YYYY');
 			var eventDetails = {
 				cDate : cDate,
-				from_prev_call : $rootScope.for_next_call,
-				uID : $rootScope.uID
+				from_prev_call : $rootScope.data.for_next_call,
+				uuid : $rootScope.data.uuid
 			};
 			if (!$rootScope.subscribedToEvent) {
 				$scope.scheduledEvents = $rootScope.scheduledEvents;
@@ -29,8 +28,8 @@
 						FlashService.Error(response.data.errorMSG_user);
 						vm.dataLoading = false;
 					} else {
-						$rootScope.for_next_call = response.data.for_next_call;
-						$rootScope.uID = response.data.uID;
+						$rootScope.data = response.data;
+						$rootScope.headers = response.headers();
 						$rootScope.scheduledEvents = (response.data.month_events_list[3]);
 						$scope.showScheduledEvents = $scope.scheduledEvents[1].length > 0;
 					}
@@ -38,26 +37,6 @@
 					FlashService.Error($rootScope.configData.errorMessage);
 				});
 			}
-		}
-		
-		function EmailSchedule() {
-			console.log('email');
-			var emailSchedule = {
-				from_prev_call : $rootScope.for_next_call,
-				uID : $rootScope.uID
-			};
-			FlashService.Success('Emailing in progress ...');
-			EventsService.EmailSchedule(emailSchedule).then(function(response) {
-				if (response.data.errorMSG_internal !== 'DEFAULT_OK') {
-					FlashService.Error(response.data.errorMSG_user);
-				} else {
-					$rootScope.for_next_call = response.data.for_next_call;
-					$rootScope.uID = response.data.uID;
-					FlashService.Success(response.data.errorMSG_user);
-				}
-			}, function error(errorResponse) {
-				FlashService.Error($rootScope.configData.errorMessage);
-			});
 		}
 
 	}

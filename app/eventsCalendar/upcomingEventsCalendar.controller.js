@@ -8,6 +8,7 @@
 		var vm = this;
 
 		vm.SubscribeToEvent = SubscribeToEvent;
+		vm.GetAllEvents = GetAllEvents;
 		vm.EventsJSONMapping = EventsJSONMapping;
 
 		(function initController() {
@@ -21,8 +22,8 @@
 			var cDate = moment().format('DD/MM/YYYY');
 			var eventDetails = {
 				cDate : cDate,
-				from_prev_call : $rootScope.for_next_call,
-				uID : $rootScope.uID
+				from_prev_call : $rootScope.data.for_next_call,
+				uuid : $rootScope.data.uuid
 			};
 			EventsService.GetAllEvents(eventDetails).then(function(response) {
 				if (response.data.errorMSG_user !== '') {
@@ -33,8 +34,8 @@
 					FlashService.Error(response.message);
 					vm.dataLoading = false;
 				} else {
-					$rootScope.for_next_call = response.data.for_next_call;
-					$rootScope.uID = response.data.uID;
+					$rootScope.data = response.data;
+					$rootScope.headers = response.headers();
 					$rootScope.scheduledEvents = (response.data.month_events_list[3]);
 					
 					(response.data.month_events_list).pop();	
@@ -51,8 +52,8 @@
 		function SubscribeToEvent(eventDetails, event) {
 			event.stopPropagation();
 			var eventTosubscribe = {
-				from_prev_call : $rootScope.for_next_call,
-				uID : $rootScope.uID,
+				from_prev_call : $rootScope.data.for_next_call,
+				uuid : $rootScope.data.uuid,
 				event_row : {
 					eSEQ : eventDetails[0],
 					eNum : eventDetails[1],
@@ -70,8 +71,8 @@
 				if (response.data.errorMSG_internal !== 'DEFAULT_OK') {
 					FlashService.Error(response.data.errorMSG_user);
 				} else {
-					$rootScope.for_next_call = response.data.for_next_call;
-					$rootScope.uID = response.data.uID;
+					$rootScope.data = response.data;
+					$rootScope.headers = response.headers();
 					FlashService.Success(response.data.errorMSG_user);
 				}
 			}, function error(errorResponse) {

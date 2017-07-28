@@ -19,8 +19,8 @@
         function Logout() {
         	vm.dataLoading = true;
         	var data = {
-        		from_prev_call : $rootScope.for_next_call,
-        		uID : $rootScope.uID
+        		from_prev_call : $rootScope.data.for_next_call,
+        		uuid : $rootScope.data.uuid
         	};
         	AuthenticationService.Logout(data).then(function (response) {
         		vm.dataLoading = false;
